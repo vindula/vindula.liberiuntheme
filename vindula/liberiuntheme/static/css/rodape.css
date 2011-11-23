@@ -1,0 +1,132 @@
+/* Rodapé */
+.bk_rodape{
+	background: #464646;
+}
+
+#portal-footer {
+    background: none repeat scroll 0 0 #000000;
+	line-height:3em;
+    margin: 0;
+    padding: 0;
+}
+
+#portal-footer .links_redes_sociais{
+	margin: 1.3em 0.4em 0 0;
+}
+
+#portal-footer #portal-logo{
+	 margin: 0.5em 0 0.5em 1.125em;
+}
+
+#portal-footer #portal-searchbox{
+	 margin: 1.6em 1.25em 1.25em;
+}
+
+#portal-colophon {
+    font-size: 87.5%;
+    margin: 0;
+    padding: 2em 0 1.5em 0.4em;
+    text-align: left;
+}
+
+#nav_rodape li a{
+    color: #D7D7D7;
+    font-weight: bold;
+}
+
+#nav_rodape li a:hover {
+	color: #F58220;
+	text-decoration: underline;
+}
+
+#nav_rodape li{
+    display: inline;
+    float: left;
+}
+
+#nav_rodape li ul{
+    margin: 0.3em 0 0;
+	position:relative;
+}
+
+#nav_rodape li ul li{
+    display: block;
+    float: none;
+    line-height: 1.6em;
+    padding: 0;
+}
+
+#nav_rodape li ul li a{
+    color: #FFFFFF;
+    display: block;
+    font-size: 75%;
+    font-weight: normal;
+}
+
+#portal-siteactions {
+    background: none repeat scroll 0 0 #363636;
+    font-size: 75%;
+    margin: 0 1.2em;
+    padding: 1em 0.5em;
+    text-align: left;
+	*padding: 0.5em 0.5em 1em 0.5em;
+}
+
+#portal-siteactions li {
+    margin-right: 0;
+}
+
+#portal-siteactions a{
+    border-right: 0.1em solid #C2C2C2;
+    color: #C2C2C2;
+    font-weight: bold;
+    padding: 0 0.5em 0 0.3em;
+}
+
+#portal-siteactions li a:hover{
+	color: #C2C2C2;
+}
+
+#kss-spinner {
+    background-position: left center;
+    display: block;
+    height: auto;
+    left: 0;
+    margin: 1.9em 1.2em 1em;
+    padding: 0 0 1.9em;
+    position: relative;
+    top: 0;
+    width: auto;
+}
+
+#cont_esquerda{
+	float:left;
+}
+
+#cont_direita{
+	float:right;
+}
+
+#kss-spinner p{
+   	color: #F58220;
+    float: left;
+    font-size: 62.5%;
+}
+
+#kss-spinner ul{
+    float: left;
+    margin: -0.3em 0 0 0.3em;
+}
+
+#kss-spinner li a{
+    border-right: 0.1em solid #FFFFFF;
+    font-size: 62.5%;
+	padding:0 0.4em 0 0;
+}
+
+#cont_direita a{
+	padding: 0 0 0 0.4em;
+}
+#kss-spinner a{
+	color:#FFFFFF;
+}

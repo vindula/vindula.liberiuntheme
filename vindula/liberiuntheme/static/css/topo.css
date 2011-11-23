@@ -1,0 +1,188 @@
+/* Topo */
+
+#portal-personaltools-wrapper{
+    background: none repeat scroll 0 0 #000000;
+    float: left;
+	*float: none;
+    width: 100%;
+}
+
+#portal-personaltools {
+    -moz-border-radius-bottomleft: 0;
+    -moz-border-radius-bottomright: 0;
+    background: none repeat scroll 0 0 transparent;
+    font-size: 75%;
+    margin: 0;
+	padding: 0.75em 0.6em;
+}
+
+#portal-personaltools li:last-of-type{
+	border-right:none;
+}
+
+#cont_portal_header{
+	margin: 0 auto;
+    max-width: 80em;
+    min-width: 980px;
+}
+
+#portal-header{
+ 	background: url("../images/bkgs/bk_topo.jpg") no-repeat scroll 0 0 transparent;
+}
+
+#portal-personaltools a{
+    border-right: 0.1em solid #C2C2C2;
+    color: #C2C2C2;
+    padding: 0 0.3em 0 0;
+}
+
+#portal-logo{
+	margin: 1.125em;
+}
+
+#portal-header #portal-logo img{
+	max-height: 83px;
+}
+.links_redes_sociais{
+    display: inline-block;
+    float: right;
+    margin: 2.1em 0 0 0;
+}
+
+.links_redes_sociais a{
+	margin: 0 0.3em 0 0;
+}
+
+/* Busca */
+
+#portal-searchbox{
+	margin: 1.25em;
+	font-size:75%;
+}
+
+#portal-searchbox p{
+    color: #58595B;
+    font-weight: bold;
+    margin: 0 0 0.3em;
+    text-align: right;
+}
+
+#searchGadget {
+    margin: 0 -0.3em 0 0;
+    width: 16em;
+}
+
+input.searchField{
+    -moz-appearance: none;
+    background: url("../images/bkgs/bk_busca.png") repeat-x scroll 0 0 #FFFFFF;
+    border: 0.1em solid #FFFFFF;
+    font-weight: bold;
+    padding: 0.5em;
+    text-align: right;
+}
+
+.searchButton{
+    background: url("../images/icons/lupa.png") no-repeat scroll center center #FAA61A;
+    border: 0.1em solid #FFFFFF;
+    cursor: pointer;
+    padding: 0.4em 1.25em;
+    width: 3.2em;
+	color: transparent;
+}
+
+.searchSection{
+	color: #58595B;
+	margin:0.5em 0 0 0;
+}
+
+.searchSection input{
+	margin-right: 5px;
+}
+
+#portal-footer .searchSection {
+	display: none;
+}
+
+/* Busca*/
+
+/* Menu */
+
+#portal-globalnav {
+    background: url("../images/bkgs/bk_menu.png") repeat-x scroll 0 0 transparent;
+    border-bottom: 0.4em solid #F8991D;
+    font-size: 87.5%;
+}
+
+#portal-globalnav li {
+    position: relative;
+}
+
+#portal-globalnav li a {
+    background: none repeat scroll 0 0 transparent;
+    border-right: 0.1em solid #858585;
+    color: #D7D7D7;
+    font-weight: bold;
+    min-width: 1em;
+    padding: 0.7em 1.5em;
+	text-align: center;
+}
+
+.selected ul li a{
+	background: #414042;
+}
+
+#portal-globalnav .selected a{
+    background: none repeat scroll 0 0 #F8991D;
+    color: #FFFFFF;
+}
+
+#portal-globalnav .selected a:hover, #portal-globalnav a:hover {
+    background: none repeat scroll 0 0 #414042;
+	color: #FFFFFF;
+}
+
+#portal-globalnav li ul li:hover {
+    background: #414042;
+	color: #FFFFFF;
+}
+
+#portal-globalnav li ul {
+	display: none;
+    background: none repeat scroll 0 0 #414042;
+    position: absolute;
+	*position:relative;
+	*float:left;
+}
+
+#portal-globalnav li ul li{
+    display: block;
+}
+
+#portal-globalnav li ul li a{
+    border: medium none;
+    font-size: 75%;
+    font-weight: normal;
+    min-width: 10em;
+    text-align: left;
+	display:block;
+}
+
+#portal-globalnav li ul li a:hover {
+    background: #121112;
+	color: #F58220;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+#portal-globalnav li ul li ul{
+	position:relative;
+}
+
+#portal-globalnav li ul li ul li a{
+	color: #FFFFFF;
+    font-weight: normal;
+}
+
+/* Menu */
+
+/* Topo */

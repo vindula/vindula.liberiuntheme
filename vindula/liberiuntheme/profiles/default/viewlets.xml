@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object>
+	
+	<order manager="plone.portalheader" skinname="*">
+		<viewlet name="vindula.liberiuntheme.logotop" insert-before="plone.global_sections"/>
+		<viewlet name="vindula.liberiuntheme.social-networks" insert-before="plone.searchbox"/>
+	</order>
+	
+	<order manager="plone.portalfooter" skinname="*">
+		<viewlet name="vindula.liberiuntheme.navigation" insert-before="plone.site_actions"/>
+ 		<viewlet name="vindula.liberiuntheme.footer" insert-before="plone.analytics"/>
+	</order>
+	
+</object> 

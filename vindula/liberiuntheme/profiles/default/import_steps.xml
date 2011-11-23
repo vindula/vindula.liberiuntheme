@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+	<import-steps>
+		
+		<import-step id="vindula.liberiuntheme.installTheme" 
+					 version="1.0"
+	                 handler="vindula.liberiuntheme.setuphandlers.installTheme"
+	                 title="Install Vindula Theme Liberiun">
+		</import-step>
+		
+	</import-steps>

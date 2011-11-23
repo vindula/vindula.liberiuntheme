@@ -1,0 +1,10 @@
+<div id="social-networks-viewlet" tal:define="icons viewlet/getIcons | nothing">
+	<tal:condition condition="icons">
+		<a tal:repeat="icon icons" 
+		   tal:attributes="title icon/title; alt icon/title; href icon/link"
+		   target="_blank">
+			<img tal:condition="icon/image" 
+			    tal:attributes="src icon/image/to_object/absolute_url; width icon/image_width; height icon/image_height" />
+		</a>
+	</tal:condition>
+</div>

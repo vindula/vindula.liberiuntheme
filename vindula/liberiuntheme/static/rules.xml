@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<rules xmlns="http://namespaces.plone.org/diazo" 
+	   xmlns:css="http://namespaces.plone.org/diazo/css" 
+	   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <!-- Pull in Plone CSS -->
+    <prepend theme="/html/head" 
+	         content="/html/head/link | /html/head/style | /html/head/script | /html/head/title | /html/head/base | /html/head/meta" />
+	
+    <!-- Prevent theme usage in zmi -->
+    <rules css:if-content="#visual-portal-wrapper">
+		<theme href="theme.html" />		
+    </rules>
+	
+	<!-- Portal Top -->
+	<copy css:content="#portal-personaltools li" css:theme="#portal-personaltools" />
+	<copy css:content-children="#social-networks-viewlet" css:theme=".links_redes_sociais" />
+	<replace css:content="#portal-searchbox .LSBox" css:theme="#portal-searchbox .LSBox" />
+	<copy css:content="a#user-name" css:theme="p#hello" if-content="" />
+	<replace css:content="#macro_logotop a" css:theme="#portal-header #portal-logo" />
+	<drop css:content="a.theme-edit" />
+	<copy css:content-children="#navigation-viewlet" css:theme="#portal-globalnav" />
+	
+	<!-- Portal Column Content -->
+	<copy css:content-children="#portal-columns" css:theme="#portal-columns" />
+	
+	<!-- Portal Footer -->
+	<replace css:content="#macro_logofooter a" css:theme="#portal-footer #portal-logo" />
+	<copy css:content-children="#navigation-viewlet" css:theme="#nav_rodape" />
+	<replace css:content="#portal-siteactions" css:theme="#portal-siteactions" />
+	<copy css:content-children="#macro_textfooter" css:theme="#kss-spinner" />
+	
+</rules>

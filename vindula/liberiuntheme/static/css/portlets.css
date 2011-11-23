@@ -1,0 +1,82 @@
+.managedPortlet {
+    margin: 0.8em 0;
+}
+.blockedPortlet .portletHeader {
+    background: none repeat scroll 0 0 transparent !important;
+    border: 1px dashed #DDDDDD;
+    margin: -1px;
+}
+.blockedPortlet .portletHeader a {
+    color: #666666;
+}
+.blockedPortlet .portletBlockedMessage {
+    color: white;
+    display: inline;
+}
+.portletCalendar {
+    margin: 1px 0 1em;
+    width: 100%;
+}
+.portletCalendar dt {
+    background-color: #EEEEEE;
+    border-bottom: medium none;
+    font-weight: bold;
+    line-height: 1.6em;
+    text-align: center;
+}
+.portletCalendar dd {
+    margin: 0;
+    padding: 0;
+}
+.portletCalendar dt a#calendar-previous {
+    float: left;
+    margin: 0 -0.5em;
+    padding: 0 1em;
+}
+.portletCalendar dt a#calendar-next {
+    float: right;
+    margin: 0 -0.5em;
+    padding: 0 1em;
+}
+.portletCalendar a, .portletCalendar a:focus, .portletCalendar a, .portletCalendar a:hover {
+    text-decoration: none;
+}
+.ploneCalendar {
+    border-spacing: 0;
+    width: 100%;
+}
+.ploneCalendar a {
+    border-bottom: medium none !important;
+    text-decoration: none;
+}
+.ploneCalendar td {
+    background-color: transparent;
+    padding: 2px;
+    text-align: center;
+    width: 14%;
+}
+.ploneCalendar .weekdays th {
+    background-color: #EEEEEE;
+    font-weight: normal;
+    padding: 2px;
+    text-align: center;
+}
+.ploneCalendar .event {
+    background-color: #EEEEEE;
+    font-weight: bold;
+}
+.ploneCalendar .todayevent {
+    background-color: #EEEEEE;
+    border: 2px solid #205C90;
+    font-weight: bold;
+}
+.ploneCalendar .todaynoevent {
+    border: 2px solid #205C90;
+}
+.portletItemDetails {
+    display: block;
+    font-size: 85%;
+    line-height: 1.5em;
+    margin-left: 1em;
+    padding-top: 0.5em;
+}

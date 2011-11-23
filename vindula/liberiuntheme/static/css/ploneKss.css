@@ -1,0 +1,44 @@
+#kss-spinner {
+    background-position: center center;
+    display: none;
+    height: 20px;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    position: fixed;
+    top: 50%;
+    width: 20px;
+}
+.formlibInlineEditable, .inlineEditable {
+    display: block;
+    padding: 1px;
+}
+body.kssActive .inlineEditable:hover, body.kssActive .formlibInlineEditable:hover {
+    background: url("input_background.png") repeat-x scroll 0 0 White;
+    border-color: #666666 #DDDDDD #DDDDDD #666666;
+    border-style: solid;
+    border-width: 1px;
+    cursor: text;
+    padding: 0;
+}
+body.kssActive .inlineEditable a:hover, body.kssActive .formlibInlineEditable a:hover {
+    cursor: pointer;
+}
+body.kssActive .formlibInlineForm:hover, body.kssActive .formlibInlineForm a:hover {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: default;
+    padding: 1px;
+}
+.inlineForm .formHelp, .inlineForm .fieldRequired, .inlineForm label {
+    display: none;
+}
+.inlineForm .ArchetypesSelectionWidget label {
+    display: inline;
+}
+.inlineForm #archetypes-fieldname-title input, .inlineForm #archetypes-fieldname-title {
+    font-size: 100%;
+}
+h1 div.formControls input {
+    font-size: 55% !important;
+}

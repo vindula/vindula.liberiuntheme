@@ -1,0 +1,46 @@
+.state-private {
+    color: Red !important;
+}
+.state-visible {
+    color: #74AE0B !important;
+}
+.state-published {
+    color: #436976 !important;
+}
+.state-pending {
+    color: #FFA500 !important;
+}
+.state-expired {
+    color: Red !important;
+}
+.syndicated {
+    color: #008000 !important;
+}
+#plone-contentmenu-workflow .state-private {
+    -moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background-color: Red;
+    border: 0.1em solid Red;
+    color: White !important;
+    padding: 0 0.5em;
+}
+#plone-contentmenu-workflow .state-visible {
+    -moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background-color: #74AE0B;
+    border: 0.1em solid #74AE0B;
+    color: White !important;
+    padding: 0 0.5em;
+}
+#plone-contentmenu-workflow .state-published {
+    -moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background-color: #436976;
+    border: 0.1em solid #436976;
+    color: White !important;
+    padding: 0 0.5em;
+}
+#plone-contentmenu-workflow .state-pending {
+    -moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background-color: #FFA500;
+    border: 0.1em solid #FFA500;
+    color: White !important;
+    padding: 0 0.5em;
+}

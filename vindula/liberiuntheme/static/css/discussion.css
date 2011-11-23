@@ -1,0 +1,105 @@
+.discussion .hide {
+    display: none;
+}
+.discussion, #commenting {
+    clear: both;
+}
+.comment {
+}
+.commentImage {
+    float: left;
+    height: 3.5em;
+    margin-right: 0.5em;
+}
+.commentImage a:link {
+    border: 0 none;
+}
+.commentImage img {
+}
+.commentDate {
+    color: #76797C;
+    display: block;
+    font-size: 85%;
+    line-height: 1.5em;
+    padding-top: 0.5em;
+}
+.commentBody {
+    clear: both;
+    margin: 1em 0;
+    overflow: auto;
+}
+.commentBody p {
+    float: left;
+}
+.discussion .documentByLine {
+    float: left;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+}
+.commentActions {
+    float: right;
+    text-align: right;
+}
+.discussion .discreet {
+    color: #666666;
+    font-size: 85%;
+}
+.reply fieldset {
+    margin: 0 !important;
+}
+.reply .text-widget {
+    display: block;
+}
+.reply-to-comment-button {
+    display: none;
+}
+.cancelreplytocomment {
+    display: none;
+}
+#bulkactions {
+    text-align: left;
+}
+#dobulkaction {
+    margin: 0.3em 0;
+}
+.comment-publish-button {
+    float: left;
+    margin-right: 0.5em;
+}
+.comment-delete-button {
+    float: left;
+}
+#review-comments {
+    margin: 0;
+}
+#fieldset-moderate-comments {
+    padding: 2em 1em;
+}
+.template-discussion-settings .unclickable {
+    opacity: 0.6;
+}
+.row #dobulkaction {
+    margin: 0;
+}
+.row #commenting {
+    font-size: 80%;
+}
+.row #commenting .formControls {
+    margin: 0;
+}
+.row #commenting textarea, .row .discussion textarea {
+    font: 100% Monaco,"Courier New",Courier,monospace;
+    width: 100%;
+}
+.row #commenting fieldset, .row .discussion fieldset {
+    border-color: #329FD7;
+    border-style: solid none none;
+    border-width: 0.1em;
+}
+.row #commenting legend, .row .discussion legend {
+    font-size: 85%;
+    padding: 0.5em 0.5em 0.5em 0;
+}
+.row #commenting label, .row .discussion label {
+    font-weight: bold;
+}

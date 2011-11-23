@@ -1,0 +1,12 @@
+<div id="navigation-viewlet" tal:define="menus viewlet/getMenu | nothing">	
+	<ul tal:condition="menus">
+		<li tal:repeat="menu menus">
+			<a tal:content="menu/title" tal:attributes="href menu/absolute_url; alt menu/title">Menu</a>
+			<ul tal:define="submenus python: viewlet.getSubMenu(menu)" tal:condition="submenus">
+				<li tal:repeat="submenu submenus">
+					<a tal:content="submenu/title" tal:attributes="href submenu/absolute_url; alt submenu/title">Submenu</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
