@@ -20,9 +20,22 @@
 	<replace css:content="#macro_logotop a" css:theme="#portal-header #portal-logo" />
 	<drop css:content="a.theme-edit" />
 	<copy css:content-children="#navigation-viewlet" css:theme="#portal-globalnav" />
+	<replace css:content="#portal-breadcrumbs" css:theme="#portal-breadcrumbs" />
+	
+	<!-- Pega o texto do nivel 1 do breadcrumbs e coloca no titulo da pagina -->
+	<replace css:theme=".titulo_principal h1">
+		<h1>
+	        <xsl:for-each css:select="#breadcrumbs-1">
+	           <xsl:copy-of select="a/text()"/>
+			   <xsl:copy-of select="span[@id='breadcrumbs-current']/text()"/>
+	        </xsl:for-each>
+		</h1>
+	</replace>
 	
 	<!-- Portal Column Content -->
-	<copy css:content-children="#portal-columns" css:theme="#portal-columns" />
+	<copy css:content-children="#portal-columns" css:theme="#portal-columns" /> 
+	<drop css:content="#viewlet-above-content" />
+	`
 	
 	<!-- Portal Footer -->
 	<replace css:content="#macro_logofooter a" css:theme="#portal-footer #portal-logo" />
@@ -30,4 +43,9 @@
 	<replace css:content="#portal-siteactions" css:theme="#portal-siteactions" />
 	<copy css:content-children="#macro_textfooter" css:theme="#kss-spinner" />
 	
+	
+	<!-- Vindula News Content Type -->
+	<rules css:if-content="body.portaltype-vindula-content-content-vindulanews">
+		<drop css:content="#parent-fieldname-title" />
+	</rules>
 </rules>

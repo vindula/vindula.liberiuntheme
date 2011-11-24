@@ -23,8 +23,8 @@ class SocialNetworksViewlet(grok.Viewlet):
     
     def getIcons(self):
         portal = self.context.portal_url.getPortalObject()
-        if 'social-networks' in portal.objectIds():
-            pasta = portal['social-networks']
+        if 'redes-sociais' in portal.objectIds():
+            pasta = portal['redes-sociais']
             self.pc = getToolByName(self.context, 'portal_catalog')
             links = self.pc(path={'query':'/'.join(pasta.getPhysicalPath())},
                             portal_type='vindula.liberiuntheme.content.socialnetwork',
@@ -61,7 +61,6 @@ class NavigationViewlet(grok.Viewlet):
             for obj in menus:
                 if self.checkObj(obj):
                     L.append(obj)
-            print L
             return L
          
     def getSubMenu(self, menu):

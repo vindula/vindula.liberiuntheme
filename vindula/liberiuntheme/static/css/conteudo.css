@@ -418,8 +418,17 @@ dl.portlet ul.navTree li a {
     text-transform: uppercase;
 }
 
-#viewlet-above-content-title p{
+div.info_data h4,
+div.descricao_titulo h4{
     color: #F58220;
+    font-size: 75%;
+    line-height: 1.3em;
+	margin-bottom: 1em;
+	font-weight:normal;
+}
+
+div.descricao_titulo h4{
+	margin-bottom: 5px;
 }
 
 #content {
@@ -429,6 +438,13 @@ dl.portlet ul.navTree li a {
 }
 
 .documentFirstHeading{
+	color: #000000;
+}
+
+.titulo_info h2 {
+    font-weight: bold;
+    line-height: 20px;
+    margin: 15px 0;
 	color: #000000;
 }
 
@@ -442,28 +458,31 @@ dl.portlet ul.navTree li a {
 	font-weight:bold;
 }
 
-.opcoes_noticia {
-    border-top: 0.1em dashed #959595;
-    margin: 0.95em 0 0.625em;
-    padding: 0.625em 0 0;
-    width: 100%;
+.opcoes_noticia{
+    border-top: 1px dashed #959595;
+    margin: 15px 0 10px 0;
+    padding: 10px 0 0;
+	width:100%;
+	*margin: 15px 0 0px 0;
 }
 
-.opcao1 {
-    float: right;
+.opcoes_noticia h4{
+    color: #F58220;
+    float: left;
+    font-weight: normal;
+    line-height: 16px;
+    margin: 0 10px 0 0;
+	font-size: 75%;
+}
+
+.opcao1{
+	float:right;
+	width: 217px;
 }
 
 .opcao2 {
     float: right;
     margin: 0 1.5em;
-}
-
-.opcoes_noticia span {
-    color: #F58220;
-    float: left;
-    font-size: 75%;
-    font-weight: normal;
-    margin: 0 0.5em 0 0;
 }
 
 .eventDetails {
@@ -507,6 +526,10 @@ dl.portlet ul.navTree li a {
 #newsImageContainer{
     float: left;
     margin:0 1em 0 0;
+}
+
+#newsImageContainer img{
+	background-color: #FFFFFF;
 }
 
 #parent-fieldname-text p{

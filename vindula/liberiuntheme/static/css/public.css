@@ -315,18 +315,30 @@ dl.portlet ul.navTree li a:hover {
 dl.portletNavigationTree dd.portletItem {
     padding: 0;
 }
+dl.portletNavigationTree img {
+    display: none;
+}
 dl.portlet ul.navTreeLevel0 > .navTreeItem {
     border-bottom: 0.1em dotted #DDDDDD;
     line-height: 2em;
     padding: 0.25em 1em;
 }
+dl.portlet ul.navTreeLevel1 {
+	list-style: none;
+}
+dl.portlet ul.navTreeLevel1 span {
+	font-weight: normal;
+}
+dl.portlet ul.navTreeLevel1 span:hover {
+	font-weight: bold;
+}
 dl.portlet ul.navTreeLevel1 .navTreeItem {
-    line-height: 2em;
+    line-height: 1.3em;
     padding-left: 0.5em;
 }
 dl.portlet ul.navTree .navTreeCurrentItem {
-    background-color: #DDDDDD;
-    border-left: 1em solid #DDDDDD;
+    background-color: transparent;
+    border-left: 1em solid transparent;
     margin-left: -1em;
     margin-right: -1em;
 }
