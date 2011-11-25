@@ -48,4 +48,10 @@
 	<rules css:if-content="body.portaltype-vindula-content-content-vindulanews">
 		<drop css:content="#parent-fieldname-title" />
 	</rules>
+	
+	<!-- Home Page Content Type -->
+	<rules css:if-content="body.portaltype-vindula-liberiuntheme-content-homepage">
+		<drop css:content=".documentFirstHeading" />
+	</rules>
+	
 </rules>

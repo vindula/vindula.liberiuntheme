@@ -19,6 +19,7 @@ $j(document).ready(function(){
 	
 	
 	/* THEME ADJUSTMENTS */
+	
 	$j('#portal-column-one').attr('class', $j('#portal-column-one').attr('class') + ' bk-column-one');
 	$j('#portal-column-two').attr('class', $j('#portal-column-two').attr('class') + ' bk-column-two');
 	

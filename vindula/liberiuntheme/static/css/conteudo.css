@@ -74,6 +74,10 @@ h1, h2 {
     padding: 0.2em;
 }
 
+#cont_banner div{
+   position: relative !important;
+}
+
 .paginacao{
 	float: right;
 }
@@ -91,6 +95,7 @@ h1, h2 {
     width: 1.125em;
 	*height: 1.125em;
     *padding: 0.1em;
+	cursor:pointer;
 }
 
 .pag_proximo{
@@ -102,6 +107,7 @@ h1, h2 {
     width: 1.125em;
 	*height: 1.125em;
     *padding: 0.1em;
+	cursor:pointer;
 }
 
 .paginacao p{

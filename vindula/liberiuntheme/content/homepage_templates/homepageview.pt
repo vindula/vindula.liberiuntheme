@@ -5,17 +5,184 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="vindula.liberiuntheme">
-<body>
+	<body>
+	
+		<metal:js fill-slot="javascript_head_slot">
+			<script type="text/javascript" src="/++resource++vindula.liberiuntheme.js/cycle.js"></script>
+			<script type="text/javascript" src="/++resource++vindula.liberiuntheme.js/homepage.js"></script>
+		</metal:js>
 
-<metal:main fill-slot="content-core">
- 	<metal:content-core define-macro="content-core">
- 		<div id="vindula-home-page">
-		
-			
-		</div>
-	</metal:content-core>
-</metal:main>
+		<metal:main fill-slot="content-core">
+		 	<metal:content-core define-macro="content-core">
+		 		<div id="vindula-home-page">
+					
+					<!-- start: BANNER -->
+					<div id="banner_home" tal:condition="context/banner">
+						<input id="cycle-timeout" type="hidden" tal:attributes="value context/time_transition">
+						<input id="cycle-height" type="hidden" tal:attributes="value context/banner_height">
+						<div id="box_banner">
+							<div id="cont_banner">
+								<div tal:repeat="img context/banner">
+									<img tal:condition="img/to_object" 
+									     tal:attributes="src img/to_object/absolute_url; alt img/to_object/title;">
+								</div>
+							</div>
+						</div>
+						<div class="paginacao">
+							<a id="cycle-prev" class="pag_anterior" title="Anterior">
+								<img src="/++theme++vindula.liberiuntheme/images/buttons/anterior.png" />
+							</a>
+							<p id="cycle-nav"></p><p tal:content="python: '/' + str(len(context.banner))"></p>
+							<a id="cycle-next" class="pag_proximo" title="Pr&oacute;ximo">
+								<img src="/++theme++vindula.liberiuntheme/images/buttons/proximo.png" />
+							</a>
+						</div>
+					</div>
+					<!-- end: BANNER -->
+					
+					
+					<!-- start: HIGHLIGHTS -->
+					<div class="geral_boxes_destaque row">
+						<div class="box_destaque position_left width-17">
+							<div class="titulo_principal" tal:condition="context/highlight_left_title">
+								<h1 tal:content="context/highlight_left_title">Left Title</h1>
+							</div>
+							<div class="info_destaque" tal:content="structure context/highlight_left/output | nothing">Content</div>
+						</div>
+						<div class="box_destaque position_right width-17">
+							<div class="titulo_principal" tal:condition="context/highlight_right_title">
+								<h1 tal:content="context/highlight_right_title">Right Title</h1>
+							</div>
+							<div class="info_destaque" tal:content="structure context/highlight_right/output | nothing">Content</div>
+						</div>
+					</div>
+					<!-- end: HIGHLIGHTS -->
+					
+					
+					<!-- start: SUB HIGHLIGHTS -->
+					<div id="opcoes_produto" class="row" tal:condition="python: context.sub_highlight_left or context.sub_highlight_right">
+						<div class="bt_opcao position_left" tal:content="structure context/sub_highlight_left/output | nothing">Content</div>
+						<div class="bt_opcao" tal:content="structure context/sub_highlight_right/output | nothing">Content</div>
+					</div>
+					<!-- end: SUB HIGHLIGHTS -->
+					
+					
+					<!-- start: CONTENT BOXES -->
+					<div id="opcoes_destaque" class="row" tal:define="boxes view/getContentBoxes">
+						<div class="box_opcao position_left width-18" tal:condition="boxes" tal:repeat="box boxes">
+							<div class="topo_box border-right">
+								<h4 tal:content="python: box[0]">Title</h4>
+								<div class="paginacao_box">
+									<a class="item_anterior" title="" href=""><img alt="" src="imagens/anterior.png"/></a>
+									<p>1/3</p>
+									<a class="item_proximo" title="" href=""><img alt="" src="imagens/proximo.png"/></a>
+								</div>
+								<div class="VisualClear"></div>
+							</div>
+							<div class="cont_box" tal:define="contents python: box[1]">
+								<div class="info_destaque" tal:repeat="obj contents">
+									<div class="descricao">
+										<h3><a tal:content="obj/title" tal:attributes="href obj/link">Content Title</a></h3>
+										<p tal:content="obj/description">Content Description</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end: CONTENT BOXES -->
+					
+					
+					<!-- start: CONTENT LIST -
+					<div class="geral_boxes_destaque row">
+						<div class="box_destaque position_left width-17">
+						<div class="titulo_principal">
+							<h1>Eventos</h1>
+						</div>
+						<div class="info_destaque">
+							<div class="descricao">
+								<div class="titulo_item">
+									<h5><a href="" title="">Nome do Evento </a></h5>
+								</div>
+								<p>Descrição do Evento Suspendisse quis dolor vitae arcu sagittis ultricies a et felis. Vestibulum eu dui eget erat semper commodo.</p>
+								<h5>Data / Horário / Local</h5>
+							</div>
+						</div>
+						<div class="info_destaque">
+							<div class="descricao">
+								<div class="titulo_item">
+									<h5><a href="" title="">Nome do Evento </a></h5>
+								</div>
+								<p>Descrição do Evento Suspendisse quis dolor vitae arcu sagittis ultricies a et felis. Vestibulum eu dui eget erat semper commodo.</p>
+								<h5>Data / Horário / Local</h5>
+							</div>
+						</div>
+						<div class="info_destaque">
+							<div class="descricao">
+								<div class="titulo_item">
+									<h5><a href="" title="">Nome do Evento </a></h5>
+								</div>
+								<p>Descrição do Evento Suspendisse quis dolor vitae arcu sagittis ultricies a et felis. Vestibulum eu dui eget erat semper commodo.</p>
+								<h5>Data / Horário / Local</h5>
+							</div>
+						</div>
+						<div class="paginacao">
+							<a class="pag_anterior" title="" href=""><img alt="" src="imagens/anterior.png"/></a>
+							<p>1/4</p>
+							<a class="pag_proximo" title="" href=""><img alt="" src="imagens/proximo.png"/></a>
+						</div>
+					</div>
+					<div class="box_destaque position_right width-17">
+						<div class="titulo_principal">
+							<h1>Blog</h1>
+						</div>
+						<div class="info_destaque">
+							<div class="img_descricao">
+								<img src="imagens/img_blog.jpg" alt=""/>
+							</div>
+							<div class="descricao">
+								<div class="titulo_item">
+									<h5><a href="" title="">Nome do Blog</a></h5>
+								</div>
+								<p>Vestibulum eu dui eget erat semper commodo.Descrição do Blog et a est. Suspen disse quis dolor vitae arcu sagittis ultri cies a et felis. Mauris</p>
+								<h5>Autor do blog: Fulano</h5>
+							</div>
+						</div>
+						<div class="info_destaque">
+							<div class="img_descricao">
+								<img src="imagens/img_blog.jpg" alt=""/>
+							</div>
+							<div class="descricao">
+								<div class="titulo_item">
+									<h5><a href="" title="">Nome do Blog</a></h5>
+								</div>
+								<p>Vestibulum eu dui eget erat semper commodo.Descrição do Blog et a est. Suspen disse quis dolor vitae arcu sagittis ultri cies a et felis. Mauris</p>
+								<h5>Autor do blog: Fulano</h5>
+							</div>
+						</div>
+						<div class="info_destaque">
+							<div class="img_descricao">
+								<img src="imagens/img_blog.jpg" alt=""/>
+							</div>
+							<div class="descricao">
+								<div class="titulo_item">
+									<h5><a href="" title="">Nome do Blog</a></h5>
+								</div>
+								<p>Vestibulum eu dui eget erat semper commodo.Descrição do Blog et a est. Suspen disse quis dolor vitae arcu sagittis ultri cies a et felis. Mauris</p>
+								<h5>Autor do blog: Fulano</h5>
+							</div>
+						</div>
+						<div class="paginacao">
+							<a class="pag_anterior" title="" href=""><img alt="" src="imagens/anterior.png"/></a>
+							<p>1/4</p>
+							<a class="pag_proximo" title="" href=""><img alt="" src="imagens/proximo.png"/></a>
+						</div>
+					</div>
+				   </div>
+				   <!-- end: CONTENT LIST -->
+					
+				</div>
+			</metal:content-core>
+		</metal:main>
 
-</body>
+	</body>
 </html>
-
