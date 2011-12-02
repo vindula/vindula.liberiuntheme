@@ -60,8 +60,8 @@
 /* ...Content Types Icons */
 
 /* Galery Circle Home */
-#cycle-nav a { display:none; }
-#cycle-nav a.activeSlide{ display:inline; }
+.cycle-nav a { display:none; }
+.cycle-nav a.activeSlide{ display:inline; }
 .paginacao p a{
   	color: #636363 !important;
     line-height: 1.3em;

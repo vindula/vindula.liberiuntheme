@@ -180,7 +180,7 @@ class IHomePage(form.Schema):
         required=False,
         )
     
-    # Fieldset content boxes
+    # Fieldset content list
     form.fieldset('content_lists',
             label=_(u"Listas de Conteúdo"),
             fields=['content_list_left_title', 
@@ -195,13 +195,17 @@ class IHomePage(form.Schema):
         required=False,
         )
     
-    content_list_left = RelationChoice(
+    content_list_left = RelationList(
         title=_(u"Lista de conteúdo da esquerda"),
         description=_(u"Selecione a pasta onde estão os conteúdos que serão listados. \
-                        Serão listados conteúdos do tipo página, notícia e evento."),                        
-        source=ObjPathSourceBinder(
-            portal_type = 'Folder',  
-            review_state='published'       
+                        Serão listados conteúdos do tipo página, notícia e evento."),
+        default=[],                        
+        value_type=RelationChoice(
+            title=_(u"Caixa de conteúdo da esquerda"),
+            source=ObjPathSourceBinder(
+                portal_type = 'Event',  
+                review_state='published'       
+                )
             ),
         required=False,
         )
@@ -212,17 +216,20 @@ class IHomePage(form.Schema):
         required=False,
         )
     
-    content_list_right = RelationChoice(
+    content_list_right = RelationList(
         title=_(u"Lista de conteúdo da direita"),
         description=_(u"Selecione a pasta onde estão os conteúdos que serão listados. \
-                        Serão listados conteúdos do tipo página, notícia e evento."),               
-        source=ObjPathSourceBinder(
-            portal_type = 'Folder',  
-            review_state='published'       
+                        Serão listados conteúdos do tipo página, notícia e evento."),
+        default=[],                        
+        value_type=RelationChoice(
+            title=_(u"Caixa de conteúdo da direita"),
+            source=ObjPathSourceBinder(
+                portal_type = 'vindula.content.content.vindulanews',  
+                review_state='published'       
+                )
             ),
         required=False,
         )
-
     
 # View
     
@@ -261,12 +268,50 @@ class HomePageView(grok.View):
                         D['description'] = obj.summary
                         
                         if obj.image:
-                            D['image'] = obj.image.to_object.absolute_url() + '/tile'      
+                            D['image'] = obj.image.to_object.absolute_url()  + '/image_tile'      
                     else:
                         D['description'] = obj.Description()
                     L.append(D)
-                    
+            
             item = [titles[n], L]
             contents.append(item)
-            n =+ 1
+            n += 1
+        
+        return contents
+    
+    def getContentLists(self):
+        fields = [self.context.content_list_left, 
+                  self.context.content_list_right]
+        
+        titles = [self.context.content_list_left_title, 
+                  self.context.content_list_right_title]
+        
+        contents = []
+        n = 0
+        
+        for field in fields:
+            L = []
+            if field:
+                for obj in field:
+                    obj = obj.to_object
+                    if obj is None:
+                        objs.remove(obj)
+                        continue
+                    D = {}
+                    D['title'] = obj.Title()
+                    D['link'] = obj.absolute_url()
+                    D['image'] = ''
+                    if obj.portal_type == 'vindula.content.content.vindulanews':
+                        D['description'] = obj.summary
+                        
+                        if obj.image:
+                            D['image'] = obj.image.to_object.absolute_url()  + '/image_tile'      
+                    else:
+                        D['description'] = obj.Description()
+                    L.append(D)
+            
+            item = [titles[n], L]
+            contents.append(item)
+            n += 1
+        
         return contents

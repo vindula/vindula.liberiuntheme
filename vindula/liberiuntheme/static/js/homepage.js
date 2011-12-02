@@ -16,17 +16,55 @@ $j(document).ready(function(){
 		pager:  '#cycle-nav',
 		height:	parseInt(cycle_height),
 	});
-	/*
-	var items = $j('#cycle-nav a:last').text();
-	var active = $j('#cycle-nav a.activeSlide').text();
-	$j('.paginacao p').text(active + '/' + items);
-	
-	function test(){
-		var active = $j('#cycle-nav a.activeSlide').text();
-		$j('.paginacao p').text(active + '/' + items);
-	}*/
 	
 	
-
 	
+	/* START GALLERY CYCLE AND HEIGHT CONTENT BOXES */
+	
+	var height = $j('#info-destaque-1').height();
+	var max_height = height;
+	for(var i=1; i <= document.querySelectorAll("#content-boxes").length; i++)
+	{
+		$j('#cont-boxes-'+i).cycle({
+			fx: 'fade',
+			speed: 500,
+			timeout: 0,
+			next: '#cycle-next-boxes-'+i,
+			prev: '#cycle-prev-boxes-'+i,
+			pager:'#cycle-nav-boxes-'+i,
+		});
+		
+	    for(var n=1; n <= $j('div#cont-boxes-'+i+' div.info_destaque').length; n++)
+	    {
+	        height = $j('div#cont-boxes-'+i+' div#info-destaque-'+n).height()
+	        if(height > max_height)
+	        {
+	            max_height = height;
+	        }
+	    }
+	}
+	
+	$j('#cont-boxes-1').height(max_height+10);
+	
+	$j(window).resize(function() {
+        var height = $j('#info-destaque-1').height();
+	    var max_height = height;
+	
+	    for(var i=1; i <= document.querySelectorAll("#content-boxes").length; i++)
+	    {
+	        for(var n=1; n <= $j('div#cont-boxes-'+i+' div.info_destaque').length; n++)
+	        {
+	            height = $j('div#cont-boxes-'+i+' div#info-destaque-'+n).height()
+	            if(height > max_height)
+	            {
+	                max_height = height;
+	            }
+	        }
+	    }
+	    
+	    $j('#cont-boxes-1').height(max_height+10);
+	});
+	
+	/* END GALLERY CYCLE AND HEIGHT CONTENT BOXES */
+		
 });
