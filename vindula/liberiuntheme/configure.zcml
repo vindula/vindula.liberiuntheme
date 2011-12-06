@@ -6,6 +6,7 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
 	xmlns:grok="http://namespaces.zope.org/grok"
 	xmlns:browser="http://namespaces.zope.org/browser"
+	xmlns:cmf="http://namespaces.zope.org/cmf"
     i18n_domain="vindula.liberiuntheme">
 
   <genericsetup:registerProfile
@@ -31,6 +32,9 @@
   <browser:resourceDirectory
   	name="vindula.liberiuntheme.js"
   	directory="./static/js"
-  	/>	
+  	/>
+	
+  <!-- File System Directory Views registration -->
+  <cmf:registerDirectory name="skins" directory="skins" recursive="True" />
   
 </configure>

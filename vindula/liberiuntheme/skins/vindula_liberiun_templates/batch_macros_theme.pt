@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+<body>
+
+<tal:comment condition="nothing">You can feed in batch_base_url by enclosing
+the metal:use-macro="context/batch_macros/macros/navigation" statement in your
+template with a tal:define="batch_base_url YOUR_BASE_URL" tales expression.
+</tal:comment>
+<div class="paginacao"
+     metal:define-macro="navigation_theme"
+     tal:define="request request|context/request|container/request|nothing;
+                 batch batch|nothing;
+                 batchformkeys batchformkeys|nothing;
+                 batchlinkparams python:batchformkeys and dict([(key, request.form[key]) for key in batchformkeys if key in request]) or request.form;
+                 mq python:modules['ZTUtils'].make_query;
+                 url batch_base_url | request/ACTUAL_URL;
+                 currentpage batch/pagenumber;"
+                 tal:condition="python: batch.next or  batch.previous">
+     	
+    <a href=""
+	   tal:define="p batch/previous | nothing"
+       tal:condition="p"
+	   class="pag_anterior"
+	   title="Anterior"
+       tal:attributes="href python: '%s?%s' % (url , mq( batchlinkparams, {batch.b_start_str:p.first} ))">
+       <img alt="" src="/++theme++vindula.liberiuntheme/images/buttons/anterior.png"/>
+    </a>
+    
+	<tal:comment tal:replace="nothing">
+      Current page
+    </tal:comment>
+    <p tal:condition="batch/navlist" class="current"
+           tal:content="batch/pagenumber">Current page number</p>
+
+    <tal:comment tal:replace="nothing">
+      Link to last
+    </tal:comment>
+    <p>
+        &frasl;
+        <a href=""
+           tal:attributes="href python: '%s?%s' % (url,batch.pageurl(batchlinkparams,batch.numpages));"
+           tal:content="batch/numpages">3457</a>
+    </p>
+	
+    <a href=""
+	   tal:define="n batch/next | nothing"
+       tal:condition="n"
+	   class="pag_proximo"
+	   title="Pr&oacute;ximo"
+       tal:attributes="href python: '%s?%s' % (url , mq( batchlinkparams, {batch.b_start_str:n.first} ))">
+       <img alt="" src="/++theme++vindula.liberiuntheme/images/buttons/proximo.png"/>
+    </a>
+
+</div>
+
+</body>
+</html>

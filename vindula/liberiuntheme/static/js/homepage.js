@@ -66,5 +66,5 @@ $j(document).ready(function(){
 	});
 	
 	/* END GALLERY CYCLE AND HEIGHT CONTENT BOXES */
-		
+	
 });

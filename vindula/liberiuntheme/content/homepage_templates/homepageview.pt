@@ -107,49 +107,81 @@
 					
 					
 					<!-- start: CONTENT LIST -->
-					<div class="geral_boxes_destaque row" tal:define="lists view/getContentLists">
+					<div class="geral_boxes_destaque row" tal:define="lists view/getContentLists;
+					                                                  size view/getSize;">
 						
                         <div class="box_destaque position_left width-17" tal:define="list python: lists[0]" tal:condition="list">
 							<div class="titulo_principal">
 								<h1 tal:content="python: list[0]">Title</h1>
 							</div>
-							<div class="info_destaque" tal:define="contents python: list[1]" tal:repeat="obj contents">
-								<div class="descricao">
-									<div class="titulo_item">
-										<h5><a title="" tal:content="obj/title" tal:attributes="href obj/link">List Title</a></h5>
-									</div>
-									<p tal:content="obj/description">List Title</p>
-									<h5>Data / Horário / Local</h5>
+
+                            <div tal:define="contents python: list[1];
+		                                                           Batch python:modules['Products.CMFPlone'].Batch;
+		                                                           b_size python:int(size);
+		                                                           b_start_1 python:0;
+																   b_start_1 request/b_start_1 | b_start_1">
+																   
+								<div class="info_destaque" tal:define="batch python:Batch(contents, b_size, int(b_start_1));"
+	                                 tal:repeat="obj batch">	
+									 				
+									<div tal:condition="obj/image" class="img_descricao">
+                                        <img tal:attributes="src obj/image" alt=""/>
+                                    </div>
+										                                                                             
+	                                <div class="descricao">
+	                                    <div class="titulo_item">
+	                                        <h5><a title="" tal:content="obj/title" tal:attributes="href obj/link">List Title</a></h5>
+	                                    </div>
+	                                    <p tal:content="obj/description">List Title</p>
+										<h5 tal:condition="obj/author" tal:content="string: Autor: ${obj/author}"></h5>
+	                                    <h5 tal:condition="obj/event" tal:content="obj/event"></h5>
+	                                </div>
+									
 								</div>
+                            
+                                <div tal:define="batch python:Batch(contents, b_size, int(b_start_1), b_start_str='b_start_1');">
+	                                <div metal:use-macro="here/batch_macros_theme/macros/navigation_theme" />
+	                            </div>
+
 							</div>
-							<div class="paginacao">
-								<a class="pag_anterior" title="" href=""><img alt="" src="imagens/anterior.png"/></a>
-								<p>1/4</p>
-								<a class="pag_proximo" title="" href=""><img alt="" src="imagens/proximo.png"/></a>
-							</div>
+							
 						</div>
 						
 						<div class="box_destaque position_right width-17" tal:define="list python: lists[1]" tal:condition="list">
 							<div class="titulo_principal">
 								<h1 tal:content="python: list[0]">Title</h1>
 							</div>
-							<div class="info_destaque" tal:define="contents python: list[1]" tal:repeat="obj contents">
-								<div tal:condition="obj/image" class="img_descricao">
-									<img tal:attributes="src obj/image" alt=""/>
+							
+                            <div tal:define="contents python: list[1];
+							                                       Batch python:modules['Products.CMFPlone'].Batch;
+                                                                   b_size python:int(size);
+                                                                   b_start_2 python:0;
+                                                                   b_start_2 request/b_start_2 | b_start_2">
+
+                                <div class="info_destaque" tal:define="batch python:Batch(contents, b_size, int(b_start_2));"
+                                     tal:repeat="obj batch">
+                                     	
+	                                <div tal:condition="obj/image" class="img_descricao">
+	                                    <img tal:attributes="src obj/image" alt=""/>
+	                                </div>
+									
+	                                <div class="descricao">
+	                                    <div class="titulo_item">
+	                                        <h5><a title="" tal:content="obj/title" tal:attributes="href obj/link">List Title</a></h5>
+	                                    </div>
+	                                    <p tal:content="obj/description">List Title</p>
+	                                    <h5 tal:condition="obj/author" tal:content="string: Autor: ${obj/author}"></h5>
+										<h5 tal:condition="obj/event" tal:content="obj/event"></h5>
+	                                </div>
+									
 								</div>
-								<div class="descricao">
-									<div class="titulo_item">
-										<h5><a title="" tal:content="obj/title" tal:attributes="href obj/link">List Title</a></h5>
-									</div>
-									<p tal:content="obj/description">List Title</p>
-									<h5>Autor do blog: Fulano</h5>
-								</div>
+                            
+	                            <div tal:define="batch python:Batch(contents, b_size, int(b_start_2), b_start_str='b_start_2');">
+                                    <div metal:use-macro="here/batch_macros_theme/macros/navigation_theme" />
+                                </div>
+							
 							</div>
-							<div class="paginacao">
-								<a class="pag_anterior" title="" href=""><img alt="" src="imagens/anterior.png"/></a>
-								<p>1/4</p>
-								<a class="pag_proximo" title="" href=""><img alt="" src="imagens/proximo.png"/></a>
-							</div>
+							
 	                    </div>
 						
 				   </div>

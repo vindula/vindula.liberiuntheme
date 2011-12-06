@@ -183,10 +183,15 @@ class IHomePage(form.Schema):
     # Fieldset content list
     form.fieldset('content_lists',
             label=_(u"Listas de Conteúdo"),
-            fields=['content_list_left_title', 
-                    'content_list_left', 
-                    'content_list_right_title', 
-                    'content_list_right', 
+            fields=['content_list_left_title',
+                    'choice_type_left',
+                    'content_list_left',
+                    'content_list_collection_left',
+                    'content_list_right_title',
+                    'choice_type_right',
+                    'content_list_right',
+                    'content_list_collection_right',
+                    'items_page',
                     ])
     
     content_list_left_title = schema.TextLine(
@@ -195,17 +200,34 @@ class IHomePage(form.Schema):
         required=False,
         )
     
+    choice_type_left = schema.Bool(
+        title=_(u"Usar Coleção."),
+        description=_(u"Selecione se vai usar um conteúdo Coleção."),
+        required=False,
+        )
+    
     content_list_left = RelationList(
-        title=_(u"Lista de conteúdo da esquerda"),
+        title=_(u"Lista de conteúdo da esquerda."),
         description=_(u"Selecione a pasta onde estão os conteúdos que serão listados. \
-                        Serão listados conteúdos do tipo página, notícia e evento."),
+                        Serão listados conteúdos do tipo Notícia e Evento. \n \
+                        (Se a opção usar coleção estiver marcada os conteúdos marcados aqui serão ignorados.)"),
         default=[],                        
         value_type=RelationChoice(
             title=_(u"Caixa de conteúdo da esquerda"),
             source=ObjPathSourceBinder(
-                portal_type = 'Event',  
+                portal_type = ('vindula.content.content.vindulanews', 'Event'),  
                 review_state='published'       
                 )
+            ),
+        required=False,
+        )
+    
+    content_list_collection_left = RelationChoice(
+        title=_(u"Lista de conteúdo da esquerda (Coleção)."),
+        description=_(u"Selecione um conteúdo Coleção com conteúdos de tipo notícia ou evento que serão listados do painel da esquerda."),
+        source=ObjPathSourceBinder(
+            portal_type = 'Topic',  
+            review_state='published'       
             ),
         required=False,
         )
@@ -216,21 +238,45 @@ class IHomePage(form.Schema):
         required=False,
         )
     
+    choice_type_right = schema.Bool(
+        title=_(u"Usar Coleção."),
+        description=_(u"Selecione se vai usar um conteúdo Coleção."),
+        required=False,
+        )
+    
     content_list_right = RelationList(
         title=_(u"Lista de conteúdo da direita"),
         description=_(u"Selecione a pasta onde estão os conteúdos que serão listados. \
-                        Serão listados conteúdos do tipo página, notícia e evento."),
+                        Serão listados conteúdos do tipo Notícia e Evento. \n \
+                        (Se a opção usar coleção estiver marcada os conteúdos marcados aqui serão ignorados.)"),
         default=[],                        
         value_type=RelationChoice(
             title=_(u"Caixa de conteúdo da direita"),
             source=ObjPathSourceBinder(
-                portal_type = 'vindula.content.content.vindulanews',  
+                portal_type = ('vindula.content.content.vindulanews', 'Event'),
                 review_state='published'       
                 )
             ),
         required=False,
         )
     
+    content_list_collection_right = RelationChoice(
+        title=_(u"Lista de conteúdo da esquerda (Coleção)."),
+        description=_(u"Selecione um conteúdo Coleção com conteúdos de tipo notícia ou evento que serão listados do painel da direita."),
+        source=ObjPathSourceBinder(
+            portal_type = 'Topic',  
+            review_state='published'       
+            ),
+        required=False,
+        )
+    
+    items_page = schema.Int(
+        title=_(u"Itens por página."),
+        description=_(u"Quantos itens serão exibidos por página."),
+        required=True,
+        default=4,
+        )
+
 # View
     
 class HomePageView(grok.View):
@@ -265,12 +311,12 @@ class HomePageView(grok.View):
                     D['link'] = obj.absolute_url()
                     D['image'] = ''
                     if obj.portal_type == 'vindula.content.content.vindulanews':
-                        D['description'] = obj.summary
+                        D['description'] = self.limitTextSize(350, obj.summary)
                         
                         if obj.image:
                             D['image'] = obj.image.to_object.absolute_url()  + '/image_tile'      
                     else:
-                        D['description'] = obj.Description()
+                        D['description'] = self.limitTextSize(350, obj.Description())
                     L.append(D)
             
             item = [titles[n], L]
@@ -280,8 +326,17 @@ class HomePageView(grok.View):
         return contents
     
     def getContentLists(self):
-        fields = [self.context.content_list_left, 
-                  self.context.content_list_right]
+        fields = []
+        
+        if self.context.choice_type_left:
+            fields.append(self.context.content_list_collection_left.to_object.queryCatalog())
+        else:
+            fields.append(self.context.content_list_left)
+            
+        if self.context.choice_type_right:
+            fields.append(self.context.content_list_collection_right.to_object.queryCatalog())
+        else:
+            fields.append(self.context.content_list_right)
         
         titles = [self.context.content_list_left_title, 
                   self.context.content_list_right_title]
@@ -293,7 +348,10 @@ class HomePageView(grok.View):
             L = []
             if field:
                 for obj in field:
-                    obj = obj.to_object
+                    try:
+                        obj = obj.to_object
+                    except:
+                        obj = obj.getObject()
                     if obj is None:
                         objs.remove(obj)
                         continue
@@ -301,13 +359,16 @@ class HomePageView(grok.View):
                     D['title'] = obj.Title()
                     D['link'] = obj.absolute_url()
                     D['image'] = ''
+                    D['event'] = ''
+                    D['author'] = ''
                     if obj.portal_type == 'vindula.content.content.vindulanews':
-                        D['description'] = obj.summary
-                        
+                        D['description'] = self.limitTextSize(350, obj.summary)
+                        D['author'] = obj.Creator()                    
                         if obj.image:
                             D['image'] = obj.image.to_object.absolute_url()  + '/image_tile'      
                     else:
-                        D['description'] = obj.Description()
+                        D['event'] = obj.startDate.strftime('%d/%m/%Y %H:%M') + ' Local: ' + obj.location
+                        D['description'] = self.limitTextSize(350, obj.Description())
                     L.append(D)
             
             item = [titles[n], L]
@@ -315,3 +376,16 @@ class HomePageView(grok.View):
             n += 1
         
         return contents
+    
+    def getSize(self):
+        return int(self.context.items_page)
+    
+    
+    def limitTextSize(self, size, text):
+        if len(text) > size:
+            i = size
+            while text[i] != " ":
+                i += 1              
+            return text[:i]+'...'
+        else:
+            return text        
