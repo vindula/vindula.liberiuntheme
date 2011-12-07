@@ -2,6 +2,7 @@
  * * * PLONE CSS UPDATES * * *
  */
 
+.display-none { display:none; }
 /* Edit Bar Background Color... */
 #edit-bar {
     background-color: #A6A6A6;
