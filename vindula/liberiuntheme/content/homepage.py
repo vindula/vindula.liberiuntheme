@@ -327,23 +327,33 @@ class HomePageView(grok.View):
     
     def getContentLists(self):
         fields = []
-        
+        titles = []
+
         if self.context.choice_type_left:
-            fields.append(self.context.content_list_collection_left.to_object.queryCatalog())
+            try:
+                fields.append(self.context.content_list_collection_left.to_object.queryCatalog())
+                titles.append(self.context.content_list_left_title)
+            except:
+                pass
         else:
-            fields.append(self.context.content_list_left)
-            
-        if self.context.choice_type_right:
-            fields.append(self.context.content_list_collection_right.to_object.queryCatalog())
-        else:
-            fields.append(self.context.content_list_right)
+            if len(self.context.content_list_left) >= 1:
+                fields.append(self.context.content_list_left)
+                titles.append(self.context.content_list_left_title) 
         
-        titles = [self.context.content_list_left_title, 
-                  self.context.content_list_right_title]
+        
+        if self.context.choice_type_right:
+            try:
+                fields.append(self.context.content_list_collection_right.to_object.queryCatalog())
+                titles.append(self.context.content_list_right_title)
+            except:
+                pass
+        else:
+            if len(self.context.content_list_right) >= 1:
+                fields.append(self.context.content_list_right)
+                titles.append(self.context.content_list_right_title)
         
         contents = []
         n = 0
-        
         for field in fields:
             L = []
             if field:
@@ -376,11 +386,7 @@ class HomePageView(grok.View):
             n += 1
         
         return contents
-    
-    def getSize(self):
-        return int(self.context.items_page)
-    
-    
+   
     def limitTextSize(self, size, text):
         if len(text) > size:
             i = size
