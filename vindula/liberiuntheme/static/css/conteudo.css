@@ -439,7 +439,7 @@ div.descricao_titulo h4{
 
 #content {
     margin: 0;
-    font-size: 100% !important;
+    /*font-size: 100% !important;*/
     line-height: 1.5em;
 }
 

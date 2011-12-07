@@ -16,7 +16,7 @@
 	padding: 0.75em 0.6em;
 }
 
-#portal-personaltools li:last-of-type{
+#portal-personaltools li#personaltools-logout a {
 	border-right:none;
 }
 
@@ -156,6 +156,7 @@ input.searchField{
 
 #portal-globalnav li ul li{
     display: block;
+	left: 0;
 }
 
 #portal-globalnav li ul li a{
