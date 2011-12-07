@@ -2,7 +2,10 @@
  * * * PLONE CSS UPDATES * * *
  */
 
+/* Several */
 .display-none { display:none; }
+#visual-portal-wrapper { margin:0 auto; }
+
 /* Edit Bar Background Color... */
 #edit-bar {
     background-color: #A6A6A6;
