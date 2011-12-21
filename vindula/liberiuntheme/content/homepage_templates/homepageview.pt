@@ -28,7 +28,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="paginacao">
+						<div class="paginacao" tal:condition="python: len(context.banner) > 1">
 							<a id="cycle-prev" class="pag_anterior" title="Anterior">
 								<img src="/++theme++vindula.liberiuntheme/images/buttons/anterior.png" />
 							</a>
@@ -47,13 +47,52 @@
 							<div class="titulo_principal" tal:condition="context/highlight_left_title">
 								<h1 tal:content="context/highlight_left_title">Left Title</h1>
 							</div>
-							<div class="info_destaque" tal:content="structure context/highlight_left/output | nothing">Content</div>
+							
+							<div class="info_destaque" tal:define="img context/highlight_left_image_content">
+								<div class="img_descricao" tal:condition="img">
+									<img alt="" tal:attributes="src string: ${img/to_object/absolute_url}/image_preview">
+								</div>
+								
+								<div class="descricao">
+									<h3>
+										<a tal:content="context/highlight_left_title_content" tal:attributes="href context/highlight_left_link_content;">Title Content</a>
+									</h3>
+									<div tal:content="structure context/highlight_left_description_content/output | nothing"></div>
+								</div>
+							</div>
 						</div>
+						
 						<div class="box_destaque position_right width-17">
 							<div class="titulo_principal" tal:condition="context/highlight_right_title">
 								<h1 tal:content="context/highlight_right_title">Right Title</h1>
 							</div>
-							<div class="info_destaque" tal:content="structure context/highlight_right/output | nothing">Content</div>
+							
+							<div class="info_destaque" tal:define="img context/highlight_right_image_content_1">
+                                <div class="img_descricao" tal:condition="img">
+                                    <img alt="" tal:attributes="src string: ${img/to_object/absolute_url}/image_preview">
+                                </div>
+                                
+                                <div class="descricao">
+                                    <h3>
+                                        <a title="" href="" tal:content="context/highlight_right_title_content_1" tal:attributes="href context/highlight_right_link_content_1 | nothing;">Title Content</a>
+                                    </h3>
+                                    <div tal:content="structure context/highlight_right_description_content_1/output | nothing"></div>
+                                </div>
+                            </div>
+							
+							<div class="info_destaque" tal:define="img context/highlight_right_image_content_2">
+                                <div class="img_descricao" tal:condition="img">
+                                    <img alt="" tal:attributes="src string: ${img/to_object/absolute_url}/image_preview">
+                                </div>
+                                
+                                <div class="descricao">
+                                    <h3>
+                                        <a title="" href="" tal:content="context/highlight_right_title_content_2" tal:attributes="href context/highlight_right_link_content_2 | nothing;">Title Content</a>
+                                    </h3>
+                                    <div tal:content="structure context/highlight_right_description_content_2/output | nothing"></div>
+                                </div>
+                            </div>
+							
 						</div>
 					</div>
 					<!-- end: HIGHLIGHTS -->
@@ -73,15 +112,17 @@
 							
 							<div class="topo_box border-right">
 								<h4 tal:content="python: box[0]">Title</h4>
-								<div class="paginacao_box paginacao">
-									<a tal:attributes="id string:cycle-prev-boxes-${repeat/box/number}" class="item_anterior" title="Anterior">
-										<img alt="" src="/++theme++vindula.liberiuntheme/images/buttons/anterior.png"/>
-									</a>
-									<p class="cycle-nav" tal:attributes="id string:cycle-nav-boxes-${repeat/box/number}"></p><p tal:content="python: '/' + str(len(box[1]))"></p>
-									<a tal:attributes="id string:cycle-next-boxes-${repeat/box/number}" class="item_proximo" title="Pr&oacute;ximo">
-										<img alt="" src="/++theme++vindula.liberiuntheme/images/buttons/proximo.png"/>
-									</a>
-								</div>
+								<tal:condition condition="python: box[1]">
+									<div class="paginacao_box paginacao" tal:condition="python: len(box[1]) > 1">
+										<a tal:attributes="id string:cycle-prev-boxes-${repeat/box/number}" class="item_anterior" title="Anterior">
+											<img alt="" src="/++theme++vindula.liberiuntheme/images/buttons/anterior.png"/>
+										</a>
+										<p class="cycle-nav" tal:attributes="id string:cycle-nav-boxes-${repeat/box/number}"></p><p tal:content="python: '/' + str(len(box[1]))"></p>
+										<a tal:attributes="id string:cycle-next-boxes-${repeat/box/number}" class="item_proximo" title="Pr&oacute;ximo">
+											<img alt="" src="/++theme++vindula.liberiuntheme/images/buttons/proximo.png"/>
+										</a>
+									</div>
+								</tal:condition>
 								<div class="VisualClear"></div>
 							</div>
 							

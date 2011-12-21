@@ -165,6 +165,18 @@ ul.opcoes{
 	color:#000000 !important;
 }
 
+.descricao ul{
+    color: #636363;
+    font-size: 75%;
+    margin: 1.2em 0 0;
+	list-style: circle inside none;
+}
+
+.descricao ul li{
+    display: list-item;
+    line-height: 1.5em;
+}
+
 #opcoes_produto{
     background: none repeat scroll 0 0 #F4F2F1;
     clear: both;
