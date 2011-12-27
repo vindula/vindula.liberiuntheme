@@ -55,15 +55,68 @@ class IHomePage(form.Schema):
         required=True,
         )
     
-    # Fieldset highlights
-    form.fieldset('highlights',
-            label=_(u"Destaques"),
+    # Fieldset highlights_left
+    form.fieldset('highlights_left',
+            label=_(u"Destaques da Esquerda"),
             fields=['highlight_left_title',
                     'highlight_left_title_content',
                     'highlight_left_link_content',
                     'highlight_left_description_content',
                     'highlight_left_image_content',
-                    'highlight_right_title',
+#                    'sub_highlight_left', 
+#                    'sub_highlight_right', 
+                    ])
+    
+    highlight_left_title = schema.TextLine(
+        title=_(u"Título principal do destaque."),
+        description=_(u"Insira um título para o destaque da esquerda."),
+        required=False,
+        )
+    
+    highlight_left_title_content = schema.TextLine(
+        title=_(u"Título do conteúdo."),
+        description=_(u"Insira um título do conteúdo da esquerda."),
+        required=False,
+        )
+    
+    highlight_left_link_content = schema.TextLine(
+        title=_(u"Link para o título do conteúdo."),
+        description=_(u"Insira um link para o título do conteúdo da esquerda."),
+        required=False,
+        )
+    
+    highlight_left_description_content = RichText(
+        title=_(u"Descrição do conteúdo."),
+        description=_(u"Insira uma descrição para o conteúdo da esquerda."),
+        required=False,
+        )
+    
+    highlight_left_image_content = RelationChoice(
+        title=_(u"Imagem do conteúdo."),
+        description=_(u"Selecine a imagem para o conteúdo da esquerda."),
+        required=False,
+        source=ObjPathSourceBinder(
+            portal_type = 'Image',
+            ),
+        )
+    
+#    sub_highlight_left = RichText(
+#        title=_(u"Sub destaque da esquerda"),
+#        description=_(u"Conteúdo do sub destaque da esquerda."),
+#        required=False,
+#        )
+#    
+#    sub_highlight_right = RichText(
+#        title=_(u"Sub destaque da direita"),
+#        description=_(u"Conteúdo do sub destaque da direita."),
+#        required=False,
+#        )
+    
+    
+    # Fieldset highlights_right
+    form.fieldset('highlights_right',
+            label=_(u"Destaques da Direita"),
+            fields=['highlight_right_title',
                     'highlight_right_title_content_1',
                     'highlight_right_link_content_1',
                     'highlight_right_description_content_1',
@@ -72,69 +125,34 @@ class IHomePage(form.Schema):
                     'highlight_right_link_content_2',
                     'highlight_right_description_content_2',
                     'highlight_right_image_content_2',
-                    'sub_highlight_left', 
-                    'sub_highlight_right', 
                     ])
     
-    highlight_left_title = schema.TextLine(
-        title=_(u"Título da esquerda"),
-        description=_(u"Insira um título para o destaque da esquerda."),
-        required=False,
-        )
-    
-    highlight_left_title_content = schema.TextLine(
-        title=_(u"Título do conteúdo da esquerda"),
-        description=_(u"Insira um título do conteúdo da esquerda."),
-        required=False,
-        )
-    
-    highlight_left_link_content = schema.TextLine(
-        title=_(u"Link para o título do conteúdo da esquerda"),
-        description=_(u"Insira um link para o título do conteúdo da esquerda."),
-        required=False,
-        )
-    
-    highlight_left_description_content = RichText(
-        title=_(u"Descrição do conteúdo da esquerda"),
-        description=_(u"Insira uma descrição para o conteúdo da esquerda."),
-        required=False,
-        )
-    
-    highlight_left_image_content = RelationChoice(
-        title=_(u"Imagem do conteúdo da esquerda"),
-        description=_(u"Selecine a imagem para o conteúdo da esquerda."),
-        required=False,
-        source=ObjPathSourceBinder(
-            portal_type = 'Image',
-            ),
-        )
-    
     highlight_right_title = schema.TextLine(
-        title=_(u"Título"),
+        title=_(u"Título principal do destaque"),
         description=_(u"Insira um título para o destaque da direita."),
         required=False,
         )
     
     highlight_right_title_content_1 = schema.TextLine(
-        title=_(u"Título do primeiro conteúdo da direita"),
+        title=_(u"Título do primeiro conteúdo."),
         description=_(u"Insira um título do primeiro conteúdo da direita."),
         required=False,
         )
     
     highlight_right_link_content_1 = schema.TextLine(
-        title=_(u"Link para o título do primeiro conteúdo da direita"),
+        title=_(u"Link para o título do primeiro conteúdo."),
         description=_(u"Insira um link para o título do primeiro conteúdo da direita."),
         required=False,
         )
     
     highlight_right_description_content_1 = RichText(
-        title=_(u"Descrição do primeiro conteúdo da direita"),
+        title=_(u"Descrição do primeiro conteúdo."),
         description=_(u"Insira uma descrição para o primeiro conteúdo da direita."),
         required=False,
         )
     
     highlight_right_image_content_1 = RelationChoice(
-        title=_(u"Imagem do primeiro conteúdo da direita"),
+        title=_(u"Imagem do primeiro conteúdo."),
         description=_(u"Selecine a imagem para o primeiro conteúdo da direita."),
         required=False,
         source=ObjPathSourceBinder(
@@ -143,42 +161,30 @@ class IHomePage(form.Schema):
         )
     
     highlight_right_title_content_2 = schema.TextLine(
-        title=_(u"Título do segundo conteúdo da direita"),
+        title=_(u"Título do segundo conteúdo."),
         description=_(u"Insira um título do segundo conteúdo da direita."),
         required=False,
         )
     
     highlight_right_link_content_2 = schema.TextLine(
-        title=_(u"Link para o segundo título do conteúdo da direita"),
+        title=_(u"Link para o segundo título do conteúdo."),
         description=_(u"Insira um link para o segundo título do conteúdo da direita."),
         required=False,
         )
     
     highlight_right_description_content_2 = RichText(
-        title=_(u"Descrição do conteúdo da direita"),
+        title=_(u"Descrição do conteúdo."),
         description=_(u"Insira uma descrição para o conteúdo da direita."),
         required=False,
         )
     
     highlight_right_image_content_2 = RelationChoice(
-        title=_(u"Imagem do segundo conteúdo da direita"),
+        title=_(u"Imagem do segundo conteúdo."),
         description=_(u"Selecine a imagem para o segundo conteúdo da direita."),
         required=False,
         source=ObjPathSourceBinder(
             portal_type = 'Image',
             ),
-        )
-    
-    sub_highlight_left = RichText(
-        title=_(u"Sub destaque da esquerda"),
-        description=_(u"Conteúdo do sub destaque da esquerda."),
-        required=False,
-        )
-    
-    sub_highlight_right = RichText(
-        title=_(u"Sub destaque da direita"),
-        description=_(u"Conteúdo do sub destaque da direita."),
-        required=False,
         )
     
     

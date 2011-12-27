@@ -29,13 +29,6 @@ $j(document).ready(function(){
 	$j('div.autocompleteInputWidget span.option label span').text(function(index, text) {
 	 	if ($j(this).text() == '(nothing)') $j(this).text('Nada selecionado');
 	} )
-	
-	
-	/* LOGO TOP AND FOOTER */
-	
-	$j('#portal-header').children('a:first').attr("id", "portal-logo");
-	$j('#portal-footer').children('a:first').attr("id", "portal-logo");
-	
 
 	/* MENU */
 	

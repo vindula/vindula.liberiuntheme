@@ -70,3 +70,13 @@
   	color: #636363 !important;
     line-height: 1.3em;
 }
+
+.vindula-portal-logo{
+	margin: 1.125em;
+	display: inline-block;
+}
+
+#content #vindula-home-page p, 
+#content #vindula-home-page ul{
+    font-size: 100% !important;
+}
