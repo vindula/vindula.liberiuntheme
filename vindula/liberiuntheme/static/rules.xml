@@ -14,6 +14,7 @@
 	
 	<!-- Portal Top -->
 	<copy css:content="#portal-personaltools li" css:theme="#portal-personaltools" />
+	<drop css:theme="#portal-personaltools-wrapper" css:if-content="#anon-personalbar"/>
 	<copy css:content-children="#social-networks-viewlet" css:theme=".links_redes_sociais" />
 	<replace css:content="#portal-searchbox .LSBox" css:theme="#portal-searchbox .LSBox" />
 	<copy css:content="a#user-name" css:theme="p#hello" if-content="" />

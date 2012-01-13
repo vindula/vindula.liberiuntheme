@@ -2,6 +2,12 @@
  * * * PLONE CSS UPDATES * * *
  */
 
+/*Width of page*/
+#visual-portal-wrapper{
+	width: 960px;
+}
+/*End width of page*/
+
 /* Several */
 .display-none { display:none; }
 #visual-portal-wrapper { margin:0 auto; }

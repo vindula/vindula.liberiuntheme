@@ -1,0 +1,201 @@
+.field-item div.documentDescription{
+	font-size: 17px;
+    line-height: 25px;
+	margin-bottom: 18px;
+    margin-top: 18px;
+	color: #333333;
+	font-family: museo-sans-1,museo-sans-2,helvetica-neue,helvetica,"Arial",sans-serif;
+	font-weight: normal;
+}
+
+#portal-breadcrumbs{
+	background-color: #FFF !important;
+}
+
+#vindula-pricing hr{
+	margin-bottom: 18px;
+    margin-top: 18px;
+	height: 1px;
+	background-color: #CCCCCC;
+    border: medium none;
+    color: #CCCCCC;
+}
+
+#vindula-pricing h2.titleTable{
+	font-size: 24px;
+    font-weight: 900;
+    line-height: 30px;
+    margin-top: 20px;
+	color: #747474;
+}
+
+#vindula-pricing h2.subtitleTable{
+	font-size: 18px;
+    font-weight: 900;
+    line-height: 30px;
+    margin-top: 20px;
+	color: #747474;
+}
+
+#vindula-pricing .product-matrix{
+	font-size: 13px;
+    line-height: 1.5em;
+}
+
+#vindula-pricing .observation{
+	margin-bottom: 18px;
+    margin-top: 18px;
+}
+
+#vindula-pricing .legend .check-box{
+	float: left;
+    margin: 2px 10px 2px 5px;
+}
+#vindula-pricing .legend .text-legend{
+	display: table;
+}
+#vindula-pricing span.information-field{
+	color: #747474;
+	font-size: 13px;
+}
+
+table, tbody, tfoot, thead, tr, th, td {
+    border: 0 none;
+    font: inherit;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+table#product-matrix {
+	width: 100%;
+}
+
+div.table-products {
+	margin-top: 15px;
+}
+
+#product-matrix span.hidden-cell {
+    display:none;
+}
+#product-matrix span.show-cell {
+    display:table-cell;
+}
+#product-matrix td h2, #block-stay-informed h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+}
+#block-stay-informed h2 {
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+#product-matrix .matrix-head td {
+    vertical-align: bottom;
+}
+#product-matrix tr.matrix-head td.legend {
+    padding-left: 0;
+}
+#product-matrix td h2 {
+    color: #000000;
+}
+#product-matrix td h3 {
+    background: url("../images/orange-arrow.png") no-repeat scroll left center transparent;
+    color: #E28611;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 0;
+    padding-left: 15px;
+    padding-top: 2px;
+}
+#block-stay-informed p {
+    margin: 0;
+}
+#product-matrix, #product-matrix tbody {
+    border: medium none;
+    font-size: 13px;
+    line-height: 1.5em;
+    margin: 0;
+}
+#product-matrix .more-info {
+    display: none;
+}
+#product-matrix p {
+    margin-top: 0;
+}
+#product-matrix td {
+    border-bottom: 1px dotted #B2B2B2;
+    border-left: 1px solid #CFCFCF;
+    padding: 5px;
+}
+#product-matrix .without-bottom-border td {
+    border-bottom: medium none;
+}
+#product-matrix td.value {
+    width: 180px !important;
+}
+#product-matrix td.try-acquia, #product-matrix td.legend {
+    border-left: medium none;
+    border-right: medium none;
+    padding-bottom: 8px;
+    padding-right: 4px;
+    padding-top: 12px;
+    width: 240px !important;
+}
+#product-matrix td.title-legend {
+    border-bottom: 1px solid #CFCFCF;
+    color: #333333;
+    font-weight: bold;
+}
+#product-matrix .more-button {
+    background-image: -moz-linear-gradient(center bottom , #DDDDDD 21%, #EEEEEE 81%);
+    border-radius: 4px 4px 4px 4px;
+    color: #333333;
+    cursor: pointer;
+    display: block;
+    padding: 5px 10px;
+}
+#product-matrix .more-button .inner {
+    background: url("../images/product-matrix-button-plus.png") no-repeat scroll 0 1px transparent;
+    display: block;
+    padding-left: 20px;
+}
+#product-matrix .price {
+    color: #333333;
+    display: block;
+    font-size: 16px;
+    font-weight: 900;
+    padding-top: 10px;
+    text-align: center;
+}
+#product-matrix .contact-sales {
+    text-align: center;
+}
+#product-matrix .contact-sales a {
+    margin-right: 15px;
+}
+#product-matrix tr td:nth-child(2) {
+    background-color: #F5F5F5;
+}
+#product-matrix tr td:nth-child(3) {
+    background-color: #E5E5E5;
+}
+#product-matrix tr td:nth-child(4) {
+    background-color: #CCCCCC;
+}
+#product-matrix tr td:nth-child(5) {
+    background-color: #E5E5E5;
+}
+#product-matrix tr.selected td:nth-child(1) {
+    background-color: #EFF9EF;
+}
+#product-matrix tr.selected td:nth-child(2) {
+    background-color: #DBFFDB;
+}
+#product-matrix tr.selected td:nth-child(3) {
+    background-color: #ADF7AD;
+}
+#product-matrix tr td, #product-matrix tr.matrix-head td {
+    background-color: #FFFFFF;
+}

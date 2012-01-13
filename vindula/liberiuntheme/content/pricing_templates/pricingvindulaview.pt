@@ -1,0 +1,290 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="vindula.liberiuntheme">
+<head>
+	<metal:css fill-slot="style_slot">
+		<link type="text/css" charset="utf-8" rel="stylesheet" tal:attributes="href string:${view/static}/css/pricing.css">
+	</metal:css>
+	
+	<metal:js fill-slot="javascript_head_slot">
+		<script type="text/javascript" tal:attributes="src string:${view/static}/js/pricing.js"></script>
+	</metal:js>
+</head>
+
+<body>
+	<metal:main fill-slot="body">
+ 		<metal:content-core define-macro="body">
+            <div id="vindula-pricing">
+                <div property="content:encoded" class="field-item even">
+                	<!--h1 metal:use-macro="context/kss_generic_macros/macros/generic_title_view">
+                        Generic KSS Title. Is rendered with class="documentFirstHeading".
+                    </h1-->
+					<div metal:use-macro="context/kss_generic_macros/macros/generic_description_view">
+                        Generic KSS Description. Is rendered with class="documentDescription".
+                    </div>
+                    <p tal:replace=" structure context/contact/output | nothing">Rich text</p>
+					<hr>
+                    <div class="visualClear"></div>
+					<h2 class="titleTable">Escolha uma licenca do Vindula:</h2>
+                    <div class="table-products">
+                        <table id="product-matrix">
+                            <tbody>
+                                <tr class="matrix-head without-bottom-border">
+                                    <td class="legend">
+                                        &nbsp;
+                                    </td>
+                                    <td class="legend">
+                                        <h2>Profissional</h2>
+                                    </td>
+                                    <td class="legend">
+                                        <h2>Executivo</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="legend">
+                                        Como eu entro em contato para suporte?
+                                    </td>
+                                    <td class="value">
+                                        F&oacute;rum e Tickets
+                                    </td>
+                                    <td class="value">
+                                        F&oacute;rum, Tickets, E-mail e Telefone
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="legend">
+                                        Qual &eacute; o tempo de resposta para atendimento &agrave; tickets cr&iacute;ticos
+                                    </td>
+                                    <td class="value">
+                                        Hor&aacute;rio Comercial
+                                    </td>
+                                    <td class="value">
+                                        24x7
+                                    </td>
+                                </tr>
+								<tr>
+                                    <td class="legend">
+                                        A minha assinatura permite administrar meus servidores Plone?
+                                    </td>
+                                    <td class="value">
+                                        Sim, com o acr&eacute;scimo da assinatura de administra&ccedil;&atilde;o remota
+                                    </td>
+                                    <td class="value">
+                                        Sim, com o acr&eacute;scimo da assinatura de administra&ccedil;&atilde;o remota
+                                    </td>
+                                </tr>
+								<tr>
+                                    <td class="legend">
+                                        Quantos tickets de suporte posso abrir?
+                                    </td>
+                                    <td class="value">
+                                        Ilimitados
+                                    </td>
+                                    <td class="value">
+                                        Ilimitados
+                                    </td>
+                                </tr>
+								<tr>
+                                    <td class="legend">
+                                        Quantas horas possuo de dicas e melhores pr&aacute;ticas?
+                                    </td>
+                                    <td class="value">
+                                        2 horas &frasl; ano
+                                    </td>
+                                    <td class="value">
+                                        10 horas &frasl; ano
+                                    </td>
+                                </tr>
+								<tr>
+                                    <td class="legend">
+                                        Quantos pessoas da minha empresa podem utilizar a assinatura do Vindula?
+                                    </td>
+                                    <td class="value">
+                                        2
+                                    </td>
+                                    <td class="value">
+                                        5
+                                    </td>
+                                </tr>
+								<tr>
+                                    <td class="legend">
+                                        Quantos servidores s&atilde;o cobertos na minha assinatura?
+                                    </td>
+                                    <td class="value">
+                                        1
+                                    </td>
+                                    <td class="value">
+                                        2
+                                    </td>
+                                </tr>
+								<tr>
+                                    <td class="legend">
+                                        Quantos Plone Sites s&atilde;o cobertos na minha assinatura?
+                                    </td>
+                                    <td class="value">
+                                        1
+                                    </td>
+                                    <td class="value">
+                                        2
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+						<div>
+							<h2 class="subtitleTable">Atualizar quantidade de servidores da assinatura:</h2>
+							
+							<table id="product-matrix">
+								<tbody>
+									<tr class="matrix-head without-bottom-border">
+										<td class="legend">
+	                                        <h2>Licen&ccedil;a</h2>
+	                                    </td>
+	                                    <td class="legend">
+	                                        <h2>Servidores</h2>
+	                                    </td>
+	                                    <td class="legend">
+	                                        <h2>Valor</h2>
+	                                    </td>
+									</tr>
+									<tr id="professional">
+	                                    <td class="legend">
+	                                        Profissional
+	                                    </td>
+	                                    <td class="value">
+	                                       <select id="servers-professional">
+	                                        	<option id="1" selected="selected">1 servidor</option>
+												<option id="2">2 a 3 servidores</option>
+												<option id="3">4 a 6 servidores</option>
+												<option id="4">Acima de 6 servidores</option>
+	                                        </select>
+	                                    </td>
+	                                    <td id="price" class="value">
+	                                        <span id="price1" class="show-cell">R&#36;900,00&frasl;m&ecirc;s</span>
+											<span id="price2" class="hidden-cell">R&#36;1.800,00&frasl;m&ecirc;s</span>
+											<span id="price3" class="hidden-cell">R&#36;3.300,00&frasl;m&ecirc;s</span>
+											<span id="price4" class="hidden-cell">Favor entrar em contato com Liberiun.</span>
+	                                    </td>
+	                                </tr>
+									<tr id="executive">
+	                                    <td class="legend">
+	                                        Executiva
+	                                    </td>
+	                                    <td class="value">
+	                                        <select id="servers-executive">
+	                                        	<option id="1" selected="selected">2 servidores</option>
+												<option id="2">3 a 5 servidores</option>
+												<option id="3">Acima de 5 servidores</option>
+	                                        </select>
+	                                    </td>
+	                                    <td id="price" class="value">
+	                                        <span id="price1" class="show-cell">R&#36;2.500,00&frasl;m&ecirc;s</span>
+											<span id="price2" class="hidden-cell">R&#36;5.500,00&frasl;m&ecirc;s</span>
+											<span id="price3" class="hidden-cell">Favor entrar em contato com Liberiun.</span>
+	                                    </td>
+	                                </tr>
+								</tbody>
+							</table>
+						</div>
+						
+						<div>
+							<h2 class="subtitleTable">Adicionais:</h2>
+							<span class="information-field">Marque o servi&ccedil;o adicional que deseja.</span>
+							
+							<table id="product-matrix">
+								<tbody>
+									<tr class="matrix-head without-bottom-border">
+										<td class="legend">
+	                                        <h2>&nbsp;</h2>
+	                                    </td>
+	                                    <td class="legend">
+	                                        <h2>Pr&eacute;-requisitos</h2>
+	                                    </td>
+	                                    <td class="legend">
+	                                        <h2>Valor</h2>
+	                                    </td>
+									</tr>
+									<tr id="first">
+										<td class="legend">
+											<div class="check-box"><input type="checkbox" name="1" id="1" /></div>
+	                                        <div class="text-legend"><span>Administra&ccedil;&atilde;o Remota</span></div>
+	                                    </td>
+	                                    <td class="value">
+	                                        Assinatura Profissional ou Executivo
+	                                    </td>
+	                                    <td class="value">
+	                                        R&#36;1.500,00&frasl;m&ecirc;s
+	                                    </td>
+									</tr>
+									<tr id="second">
+										<td class="legend">
+											<div class="check-box"><input type="checkbox" name="2" id="2" /></div>
+	                                        <div class="text-legend"><span>Adicionar novo contato da minha empresa</span></div>
+	                                    </td>
+	                                    <td class="value">
+	                                        Assinatura Profissional ou Executivo
+	                                    </td>
+	                                    <td class="value">
+	                                        R&#36;100,00&frasl;m&ecirc;s
+	                                    </td>
+									</tr>
+									<tr id="third">
+										<td class="legend">
+											<div class="check-box"><input type="checkbox" name="3" id="3" /></div>
+	                                        <div class="text-legend"><span>Atendimento Telef&ocirc;nico</span></div>
+	                                    </td>
+	                                    <td class="value">
+	                                        Plano Profissional
+	                                    </td>
+	                                    <td class="value">
+	                                        R&#36;200,00&frasl;m&ecirc;s
+	                                    </td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="total">
+							<h2 class="subtitleTable">Valor total dos planos:</h2>
+							
+							<table id="product-matrix">
+								<tbody>
+									<tr class="matrix-head without-bottom-border">
+										<td class="legend">
+	                                        &nbsp;
+	                                    </td>
+	                                    <td class="legend">
+	                                        <h2>Profissional</h2>
+	                                    </td>
+	                                    <td class="legend">
+	                                        <h2>Executivo</h2>
+	                                    </td>
+									</tr>
+									<tr>
+										<td class="legend">
+                                        	Valor
+	                                    </td>
+	                                    <td class="value" id="tot-prof">
+	                                        <span class="price" id="price">R&#36;<span id="grand-tot-prof" value="900">900</span>&sbquo;00&frasl;m&ecirc;s</span>
+											<span class="price hidden-cell" id="contact">Favor entrar em contato com a Liberiun Technologies</span>
+	                                    </td>
+	                                    <td class="value" id="tot-exec">
+	                                        <span class="price" id="price">R&#36;<span id="grand-tot-exec" value="2500">2.500</span>&sbquo;00&frasl;m&ecirc;s</span>
+											<span class="price hidden-cell" id="contact">Favor entrar em contato com a Liberiun Technologies</span>
+	                                    </td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+                    </div>
+                    <div class="observation" tal:content="structure context/observation/output | nothing">
+                        Observacoees
+                    </div>
+                </div>
+            </div>
+        </metal:content-core>
+    </metal:main>
+</body>
+</html>

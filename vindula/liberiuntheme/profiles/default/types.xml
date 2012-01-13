@@ -3,5 +3,6 @@
 	
   <object name="vindula.liberiuntheme.content.socialnetwork" meta_type="Dexterity FTI" />
   <object name="vindula.liberiuntheme.content.homepage" meta_type="Dexterity FTI" />
+  <object name="vindula.liberiuntheme.content.pricing" meta_type="Dexterity FTI" />
   
 </object>
