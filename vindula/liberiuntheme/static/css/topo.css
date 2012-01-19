@@ -104,15 +104,27 @@ input.searchField{
 /* Menu */
 
 #portal-globalnav {
+    font-size: 87.5%;
+	height: 40px;
+}
+
+#portal-globalnav ul {
     background: url("../images/bkgs/bk_menu.png") repeat-x scroll 0 0 transparent;
     border-bottom: 0.4em solid #F8991D;
-    font-size: 87.5%;
-}
+    position: absolute;
+    width: 100%;
+	}
 
 #portal-globalnav li {
     position: relative;
+	float: left;
 }
 
+/*
+#portal-globalnav li {
+    position: relative;
+}
+*/
 #portal-globalnav li a {
     background: none repeat scroll 0 0 transparent;
     border-right: 0.1em solid #858585;
@@ -146,6 +158,7 @@ input.searchField{
 	display: none;
     background: none repeat scroll 0 0 #414042;
     position: absolute;
+	border-bottom: 0 none;
 	*position:relative;
 	*float:left;
 }
@@ -153,22 +166,22 @@ input.searchField{
 #portal-globalnav li ul li{
     display: block;
 	left: 0;
+	float:none;
 }
 
 #portal-globalnav li ul li a{
     border: medium none;
     font-size: 75%;
     font-weight: normal;
-    min-width: 10em;
     text-align: left;
 	display:block;
 }
 
-#portal-globalnav li ul li a:hover {
-    background: #121112;
+#portal-globalnav li ul li:hover {
+	background-color: black;
 	color: #F58220;
 	font-weight: normal;
-	text-decoration: underline;
+	text-decoration: underline;	
 }
 
 #portal-globalnav li ul li ul{

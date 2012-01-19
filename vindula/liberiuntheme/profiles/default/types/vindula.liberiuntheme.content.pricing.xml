@@ -7,7 +7,7 @@
  <!-- Basic metadata -->
  <property name="title" i18n:translate="">Servicos e precos</property>
  <property name="description" i18n:translate="">Conteúdo que faz referência a uma rede social.</property>
- <property name="content_icon"></property>
+ <property name="content_icon">/++theme++vindula.liberiuntheme/images/icons/pricing.png</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">False</property>

@@ -188,13 +188,13 @@ div.table-products {
     background-color: #E5E5E5;
 }
 #product-matrix tr.selected td:nth-child(1) {
-    background-color: #EFF9EF;
+    background-color: #FFE4D1;
 }
 #product-matrix tr.selected td:nth-child(2) {
-    background-color: #DBFFDB;
+    background-color: #F2C4A2;
 }
 #product-matrix tr.selected td:nth-child(3) {
-    background-color: #ADF7AD;
+    background-color: #F2A76A;
 }
 #product-matrix tr td, #product-matrix tr.matrix-head td {
     background-color: #FFFFFF;

@@ -99,7 +99,9 @@
 					
 					
 					<!-- start: SUB HIGHLIGHTS -->
-					<div id="opcoes_produto" class="row" tal:condition="python: context.sub_highlight_left or context.sub_highlight_right">
+					<div id="opcoes_produto" class="row" tal:define="sub_highlight_left context/sub_highlight_left | nothing;
+																	 sub_highlight_right context/sub_highlight_right | nothing;" 
+														 tal:condition="python: sub_highlight_right or sub_highlight_left">
 						<div class="bt_opcao position_left" tal:content="structure context/sub_highlight_left/output | nothing">Content</div>
 						<div class="bt_opcao" tal:content="structure context/sub_highlight_right/output | nothing">Content</div>
 					</div>

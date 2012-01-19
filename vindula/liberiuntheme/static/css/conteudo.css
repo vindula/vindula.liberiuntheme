@@ -54,7 +54,9 @@ h1, h2 {
 
 #portal-columns p{
   	color: #636363;
-    font-size: 75%;
+	/*ALTERADO
+    font-size: 75%;*/
+	font-size: 100%;
     line-height: 1.3em;
     margin: 0;
 }

@@ -1,9 +1,5 @@
 $j = jQuery.noConflict();
 
-function changeCell(option){
-	
-}
-
 function fildChecked(value, type){
 
 	for(var i = 0; i <= $j('input:checked').length; i++){

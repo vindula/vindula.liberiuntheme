@@ -7,10 +7,11 @@
     <prepend theme="/html/head" 
 	         content="/html/head/link | /html/head/style | /html/head/script | /html/head/title | /html/head/base | /html/head/meta" />
 	
-    <!-- Prevent theme usage in zmi -->
-    <rules css:if-content="#visual-portal-wrapper">
-		<theme href="theme.html" />		
-    </rules>
+	<!-- Prevent theme usage in zmi -->
+	<rules css:if-content="#visual-portal-wrapper">
+		<theme href="theme.html" />
+	</rules>
+	
 	
 	<!-- Portal Top -->
 	<copy css:content="#portal-personaltools li" css:theme="#portal-personaltools" />
