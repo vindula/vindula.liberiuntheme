@@ -86,14 +86,21 @@ class NavigationViewlet(grok.Viewlet):
                 if self.checkObj(obj.getObject()):
                     L.append(obj.getObject())
             return L
-         
+        
     def getSubMenu(self, menu):
-        submenus = menu.objectValues('ATFolder')
+        portal = self.context.portal_url.getPortalObject()
+        types = self.getContentTypes()
+                
+        urltool = getSite().portal_url
+        caminho = {'query': '/'.join(menu.getPhysicalPath()), 'depth': 1}
+        ctool = getSite().portal_catalog
+        submenus = ctool(portal_type=types, path=caminho,sort_on='getObjPositionInParent')        
+
         if submenus:
             L = []
             for obj in submenus:
-                if self.checkObj(obj):
-                    L.append(obj)
+                if self.checkObj(obj.getObject()):
+                    L.append(obj.getObject())
             return L
 
     def checkObj(self, obj):
@@ -112,3 +119,7 @@ class NavigationViewlet(grok.Viewlet):
         if 'Anonymous' in roles and state == 'private':
             return False
         return True
+    
+    def isSelected(self, obj):
+        if obj.absolute_url() in self.context.REQUEST.get('ACTUAL_URL'):
+            return 'selected'

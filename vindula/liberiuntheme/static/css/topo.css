@@ -120,11 +120,6 @@ input.searchField{
 	float: left;
 }
 
-/*
-#portal-globalnav li {
-    position: relative;
-}
-*/
 #portal-globalnav li a {
     background: none repeat scroll 0 0 transparent;
     border-right: 0.1em solid #858585;
@@ -144,8 +139,23 @@ input.searchField{
     color: #FFFFFF;
 }
 
-#portal-globalnav .selected a:hover, #portal-globalnav a:hover {
+#portal-globalnav ul li.selected ul li a{
     background: none repeat scroll 0 0 #414042;
+}
+
+#portal-globalnav .selected a:hover {
+    background: none repeat scroll 0 0 #F8991D;
+	color: #FFFFFF;
+}
+
+#portal-globalnav a:hover {
+    background: none repeat scroll 0 0 #414042;
+	color: #FFFFFF;
+}
+
+#portal-globalnav ul li ul li a:hover, 
+#portal-globalnav ul li.selected ul li a:hover {
+    background: none repeat scroll 0 0 #000;
 	color: #FFFFFF;
 }
 
@@ -178,7 +188,6 @@ input.searchField{
 }
 
 #portal-globalnav li ul li:hover {
-	background-color: black;
 	color: #F58220;
 	font-weight: normal;
 	text-decoration: underline;	

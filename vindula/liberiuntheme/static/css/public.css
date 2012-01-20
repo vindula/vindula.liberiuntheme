@@ -475,7 +475,7 @@ body#content {
 #content .documentDescription, #content #description {
     color: #666666;
     font: bold 1.25em "Helvetica Neue",Arial,FreeSans,sans-serif;
-    margin-left: 0;
+    margin: 0 0 15px;
 }
 #content img.tileImage, #content div.newsImageContainer {
     float: right;
