@@ -29,7 +29,7 @@
                     <p tal:replace=" structure context/contact/output | nothing">Rich text</p>
 					<hr>
                     <div class="visualClear"></div>
-					<h2 class="titleTable">Escolha uma licenca do Vindula:</h2>
+					<h2 class="titleTable">Escolha um plano do Vindula:</h2>
                     <div class="table-products">
                         <table id="product-matrix">
                             <tbody>
@@ -68,7 +68,7 @@
                                 </tr>
 								<tr>
                                     <td class="legend">
-                                        A minha assinatura permite administrar meus servidores Plone?
+                                        A minha assinatura permite administrar meus servidores Vindula?
                                     </td>
                                     <td class="value">
                                         Sim, com o acr&eacute;scimo da assinatura de administra&ccedil;&atilde;o remota
@@ -141,10 +141,10 @@
 								<tbody>
 									<tr class="matrix-head without-bottom-border">
 										<td class="legend">
-	                                        <h2>Licen&ccedil;a</h2>
+	                                        <h2>Servidores</h2>
 	                                    </td>
 	                                    <td class="legend">
-	                                        <h2>Servidores</h2>
+	                                        <h2>Valor</h2>
 	                                    </td>
 	                                    <td class="legend">
 	                                        <h2>Valor</h2>
@@ -152,10 +152,8 @@
 									</tr>
 									<tr id="professional">
 	                                    <td class="legend">
-	                                        Profissional
-	                                    </td>
-	                                    <td class="value">
-	                                       <select id="servers-professional">
+	                                        <div><span>Profissional</span></div>
+											<select id="servers-professional">
 	                                        	<option id="1" selected="selected">1 servidor</option>
 												<option id="2">2 a 3 servidores</option>
 												<option id="3">4 a 6 servidores</option>
@@ -168,19 +166,23 @@
 											<span id="price3" class="hidden-cell">R&#36;3.300,00&frasl;m&ecirc;s</span>
 											<span id="price4" class="hidden-cell">Favor entrar em contato com Liberiun.</span>
 	                                    </td>
+	                                    <td>
+	                                        &nbsp;
+	                                    </td>
 	                                </tr>
 									<tr id="executive">
 	                                    <td class="legend">
-	                                        Executiva
-	                                    </td>
-	                                    <td class="value">
-	                                        <select id="servers-executive">
+	                                        <div><span>Executiva</span></div>
+											<select id="servers-executive">
 	                                        	<option id="1" selected="selected">2 servidores</option>
 												<option id="2">3 a 5 servidores</option>
 												<option id="3">Acima de 5 servidores</option>
 	                                        </select>
 	                                    </td>
-	                                    <td id="price" class="value">
+	                                    <td>
+	                                        &nbsp;
+	                                    </td>
+										<td id="price" class="value">
 	                                        <span id="price1" class="show-cell">R&#36;2.500,00&frasl;m&ecirc;s</span>
 											<span id="price2" class="hidden-cell">R&#36;5.500,00&frasl;m&ecirc;s</span>
 											<span id="price3" class="hidden-cell">Favor entrar em contato com Liberiun.</span>
@@ -201,7 +203,7 @@
 	                                        <h2>&nbsp;</h2>
 	                                    </td>
 	                                    <td class="legend">
-	                                        <h2>Pr&eacute;-requisitos</h2>
+	                                        <h2>Valor</h2>
 	                                    </td>
 	                                    <td class="legend">
 	                                        <h2>Valor</h2>
@@ -213,7 +215,7 @@
 	                                        <div class="text-legend"><span>Administra&ccedil;&atilde;o Remota</span></div>
 	                                    </td>
 	                                    <td class="value">
-	                                        Assinatura Profissional ou Executivo
+	                                        R&#36;1.500,00&frasl;m&ecirc;s
 	                                    </td>
 	                                    <td class="value">
 	                                        R&#36;1.500,00&frasl;m&ecirc;s
@@ -225,7 +227,7 @@
 	                                        <div class="text-legend"><span>Adicionar novo contato da minha empresa</span></div>
 	                                    </td>
 	                                    <td class="value">
-	                                        Assinatura Profissional ou Executivo
+	                                        R&#36;100,00&frasl;m&ecirc;s
 	                                    </td>
 	                                    <td class="value">
 	                                        R&#36;100,00&frasl;m&ecirc;s
@@ -237,10 +239,10 @@
 	                                        <div class="text-legend"><span>Atendimento Telef&ocirc;nico</span></div>
 	                                    </td>
 	                                    <td class="value">
-	                                        Plano Profissional
-	                                    </td>
-	                                    <td class="value">
 	                                        R&#36;200,00&frasl;m&ecirc;s
+	                                    </td>
+	                                    <td>
+	                                        &nbsp;
 	                                    </td>
 									</tr>
 								</tbody>
@@ -268,11 +270,11 @@
 	                                    </td>
 	                                    <td class="value" id="tot-prof">
 	                                        <span class="price" id="price">R&#36;<span id="grand-tot-prof" value="900">900</span>&sbquo;00&frasl;m&ecirc;s</span>
-											<span class="price hidden-cell" id="contact">Favor entrar em contato com a Liberiun Technologies</span>
+											<span class="price hidden-cell" id="contact">Favor entrar em contato com a Liberiun</span>
 	                                    </td>
 	                                    <td class="value" id="tot-exec">
 	                                        <span class="price" id="price">R&#36;<span id="grand-tot-exec" value="2500">2.500</span>&sbquo;00&frasl;m&ecirc;s</span>
-											<span class="price hidden-cell" id="contact">Favor entrar em contato com a Liberiun Technologies</span>
+											<span class="price hidden-cell" id="contact">Favor entrar em contato com a Liberiun</span>
 	                                    </td>
 									</tr>
 								</tbody>
