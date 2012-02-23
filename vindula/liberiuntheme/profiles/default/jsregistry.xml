@@ -4,5 +4,9 @@
  	<javascript id="++resource++vindula.liberiuntheme.js/vindula_themeliberiun.js"
     		 cacheable="True" compression="safe" cookable="False" enabled="True" 
 			 expression="" inline="False" />
+			 
+	<javascript id="++resource++vindula.liberiuntheme.js/vindula_edit_homepage.js"
+    		 cacheable="True" compression="safe" cookable="False" enabled="True" 
+			 expression="" inline="False" />
 
 </object>

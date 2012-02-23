@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="vindula.liberiuntheme">
+<head>
+	<metal:css fill-slot="style_slot">
+	</metal:css>
+	
+	<metal:js fill-slot="javascript_head_slot">
+	</metal:js>
+</head>
+
+<body>
+	<metal:main fill-slot="main">
+ 		<metal:content-core define-macro="main">
+            <div id="vindula-features">
+            	
+            	<div style="width: 301px; float: left;" tal:define="profiles view/getProfiles" tal:condition="profiles" tal:repeat="profile profiles | nothing">
+					<div>
+						<h2 tal:content="profile/title | nothing"></h2>
+						<span tal:content="profile/description | nothing"></span>
+					</div>
+					
+					<tal:cond condition="profile/contents">
+						<div tal:repeat="content profile/contents">
+							<h2 tal:content="content/title_content | nothing"></h2>
+							<span tal:content="content/description_content | nothing"></span>
+						</div>
+					</tal:cond>
+            		
+            	</div>
+				
+				<div style="float: left; width: 100%;" tal:define="contents view/getContent" tal:condition="contents" tal:repeat="content contents | nothing">
+					
+					<div>
+						<img tal:condition="content/image" tal:attributes="src string: ${content/image}/image_thumb">
+						<h1 tal:condition="content/title" tal:content="content/title"></h1>
+						<h2 tal:condition="content/subtitle" tal:content="content/subtitle"></h2>
+						<span tal:condition="content/description" tal:content="content/description"></span>
+					</div>
+					
+					<div tal:condition="content/topics" tal:repeat="topic content/topics | nothing">
+						<h2 tal:content="topic/title_topic"></h2>
+						<span tal:content="topic/description_topic"></span>
+						<img tal:condition="topic/image_topic" tal:attributes="src string: ${topic/image_topic}/image_preview">
+					</div>
+					
+				</div>
+				
+            </div>
+        </metal:content-core>
+    </metal:main>
+</body>
+</html>

@@ -110,9 +110,9 @@
 					
 					<!-- start: CONTENT BOXES -->
 					<div id="opcoes_destaque" class="row" tal:define="boxes view/getContentBoxes">
-						<div id="content-boxes" class="box_opcao position_left width-18" tal:condition="boxes" tal:repeat="box boxes">
+						<div id="content-boxes" class="box_opcao position_left width-box-opcao" tal:condition="boxes" tal:repeat="box boxes">
 							
-							<div class="topo_box border-right">
+							<div class="topo_box">
 								<h4 tal:content="python: box[0]">Title</h4>
 								<tal:condition condition="python: box[1]">
 									<div class="paginacao_box paginacao" tal:condition="python: len(box[1]) > 1">

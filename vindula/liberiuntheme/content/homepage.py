@@ -214,7 +214,7 @@ class IHomePage(form.Schema):
         value_type=RelationChoice(
             title=_(u"Caixa de conteúdo da esquerda"),
             source=ObjPathSourceBinder(
-                portal_type = ('vindula.content.content.vindulanews', 'Document'), 
+                portal_type = ('VindulaNews', 'Document'), 
                 review_state='published'
                 )
             ),
@@ -236,7 +236,7 @@ class IHomePage(form.Schema):
         value_type=RelationChoice(
             title=_(u"Caixa de conteúdo do meio"),
             source=ObjPathSourceBinder(
-                portal_type = ('vindula.content.content.vindulanews', 'Document'), 
+                portal_type = ('VindulaNews', 'Document'), 
                 review_state='published'
                 )
             ),
@@ -258,7 +258,7 @@ class IHomePage(form.Schema):
         value_type=RelationChoice(
             title=_(u"Caixa de conteúdo da direita"),
             source=ObjPathSourceBinder(
-                portal_type = ('vindula.content.content.vindulanews', 'Document'), 
+                portal_type = ('VindulaNews', 'Document'), 
                 review_state='published'
                 )
             ),
@@ -300,7 +300,7 @@ class IHomePage(form.Schema):
         value_type=RelationChoice(
             title=_(u"Caixa de conteúdo da esquerda"),
             source=ObjPathSourceBinder(
-                portal_type = ('vindula.content.content.vindulanews', 'Event'),  
+                portal_type = ('VindulaNews', 'Event'),  
                 review_state='published'       
                 )
             ),
@@ -338,7 +338,7 @@ class IHomePage(form.Schema):
         value_type=RelationChoice(
             title=_(u"Caixa de conteúdo da direita"),
             source=ObjPathSourceBinder(
-                portal_type = ('vindula.content.content.vindulanews', 'Event'),
+                portal_type = ('VindulaNews', 'Event'),
                 review_state='published'       
                 )
             ),
@@ -346,7 +346,7 @@ class IHomePage(form.Schema):
         )
     
     content_list_collection_right = RelationChoice(
-        title=_(u"Lista de conteúdo da esquerda (Coleção)."),
+        title=_(u"Lista de conteúdo da direita (Coleção)."),
         description=_(u"Selecione um conteúdo Coleção com conteúdos de tipo notícia ou evento que serão listados do painel da direita."),
         source=ObjPathSourceBinder(
             portal_type = 'Topic',  
@@ -395,11 +395,10 @@ class HomePageView(grok.View):
                     D['title'] = obj.Title()
                     D['link'] = obj.absolute_url()
                     D['image'] = ''
-                    if obj.portal_type == 'vindula.content.content.vindulanews':
-                        D['description'] = self.limitTextSize(350, obj.summary)
-                        
-                        if obj.image:
-                            D['image'] = obj.image.to_object.absolute_url()  + '/image_tile'      
+                    if obj.portal_type == 'VindulaNews':
+                        D['description'] = self.limitTextSize(350, obj.Description())
+                        if obj.getImageRelac():
+                            D['image'] = obj.getImageRelac().absolute_url()  + '/image_tile'
                     else:
                         D['description'] = self.limitTextSize(350, obj.Description())
                     L.append(D)
@@ -456,11 +455,11 @@ class HomePageView(grok.View):
                     D['image'] = ''
                     D['event'] = ''
                     D['author'] = ''
-                    if obj.portal_type == 'vindula.content.content.vindulanews':
-                        D['description'] = self.limitTextSize(350, obj.summary)
-                        D['author'] = obj.Creator()                    
-                        if obj.image:
-                            D['image'] = obj.image.to_object.absolute_url()  + '/image_tile'      
+                    if obj.portal_type == 'VindulaNews':
+                        D['description'] = self.limitTextSize(350, obj.Description())
+                        D['author'] = obj.Creator() 
+                        if obj.getImageRelac():
+                            D['image'] = obj.getImageRelac().absolute_url()  + '/image_tile'      
                     else:
                         D['event'] = obj.startDate.strftime('%d/%m/%Y %H:%M') + ' Local: ' + obj.location
                         D['description'] = self.limitTextSize(350, obj.Description())
