@@ -7,7 +7,7 @@
  <!-- Basic metadata -->
  <property name="title" i18n:translate="">Áreas do produto</property>
  <property name="description" i18n:translate="">Conteúdo para colocar as as áreas de funcionalidade de um produto.</property>
- <property name="content_icon">/++theme++vindula.liberiuntheme/images/icons/pricing.png</property>
+ <property name="content_icon">/++theme++vindula.liberiuntheme/images/icons/featuresection.png</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
