@@ -51,8 +51,7 @@ class FeaturesView(grok.View):
         results = pc( path={'query': query},
                      portal_type='vindula.liberiuntheme.content.featuresection',
                      review_state='published',
-                     sort_on= 'getObjPositionInParent',
-                     sort_order='descending', )
+                     sort_on= 'getObjPositionInParent', )
         
         L = []
         if results:
@@ -65,7 +64,10 @@ class FeaturesView(grok.View):
                 D['subtitle'] = obj.subtitle
                 D['image'] = ''
                 if obj.image_title:
-                    D['image'] = obj.image_title.to_object.absolute_url()
+                    try:
+                        D['image'] = obj.image_title.to_object.absolute_url()
+                    except:
+                        D['image'] = ''
                 D['topics'] = []
                 if obj.values():
                     topics = obj.values()
@@ -75,8 +77,12 @@ class FeaturesView(grok.View):
                             DT['id_topic'] = topic.getId()
                             DT['title_topic'] = topic.Title()
                             DT['description_topic'] = topic.Description()
+                            DT['image_topic'] = ''
                             if topic.image_topic:
-                                DT['image_topic'] = topic.image_topic.to_object.absolute_url()
+                                try:
+                                    DT['image_topic'] = topic.image_topic.to_object.absolute_url()
+                                except:
+                                    DT['image_topic'] = ''
                             D['topics'].append(DT)
                             
                 L.append(D)
