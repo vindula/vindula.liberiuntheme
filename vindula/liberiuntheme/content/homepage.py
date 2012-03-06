@@ -447,7 +447,7 @@ class HomePageView(grok.View):
                     except:
                         obj = obj.getObject()
                     if obj is None:
-                        objs.remove(obj)
+                        field.remove(obj)
                         continue
                     D = {}
                     D['title'] = obj.Title()
