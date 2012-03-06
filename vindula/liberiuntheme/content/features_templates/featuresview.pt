@@ -7,9 +7,12 @@
       i18n:domain="vindula.liberiuntheme">
 <head>
 	<metal:css fill-slot="style_slot">
+		<link type="text/css" charset="utf-8" rel="stylesheet" href="/++theme++vindula.liberiuntheme/css/jquery.fancybox-1.3.4.css">
+    	<link type="text/css" charset="utf-8" rel="stylesheet" tal:attributes="href string:${view/static}/css/funcionalidades.css">
 	</metal:css>
-	
 	<metal:js fill-slot="javascript_head_slot">
+		<script type="text/javascript" src="/++theme++vindula.liberiuntheme/js/jquery.fancybox-1.3.4.pack.js"></script>
+		<script type="text/javascript" tal:attributes="src string:${view/static}/js/funcionalidades.js"></script>
 	</metal:js>
 </head>
 
@@ -17,39 +20,71 @@
 	<metal:main fill-slot="main">
  		<metal:content-core define-macro="main">
             <div id="vindula-features">
-            	
-            	<div style="width: 301px; float: left;" tal:define="profiles view/getProfiles" tal:condition="profiles" tal:repeat="profile profiles | nothing">
-					<div>
-						<h2 tal:content="profile/title | nothing"></h2>
-						<span tal:content="profile/description | nothing"></span>
-					</div>
-					
-					<tal:cond condition="profile/contents">
-						<div tal:repeat="content profile/contents">
-							<h2 tal:content="content/title_content | nothing"></h2>
-							<span tal:content="content/description_content | nothing"></span>
+				<div id="boxes_funcionalidade" tal:define="profiles view/getProfiles | nothing" tal:condition="profiles">
+            		<h2 tal:content="context/description">Conheça as funcionalidades do Vindula, temos ferramentas para todos os perfis.</h2>
+					<div class="">
+            			<div class="coluna_boxes width_20" tal:repeat="profile profiles">			
+							<div class="sombra_box">
+								<div class="box_destaque bk_box">
+									<h2 tal:content="profile/title | nothing">Colaborador</h2>
+									<img tal:attributes="src string: ${profile/image}" alt=""/>
+									<p tal:content="profile/description | nothing">There are many variations of passages are so amet available, but the majority have suffered alteration in form, or randomised words.</p>
+								</div>
+							</div>
+							<tal:cond condition="profile/contents">
+								<div class="sombra_box" tal:repeat="content profile/contents">
+									<div class="box_secundario bk_box">
+										<a tal:attributes="href string: #${content/id_content}"><h3 tal:content="content/title_content | nothing">Home Page</h3></a>
+										<img alt="" src="/++theme++vindula.liberiuntheme/imagens/img_box_secundario.jpg"/>
+									</div>
+								</div>
+							</tal:cond>
 						</div>
-					</tal:cond>
-            		
-            	</div>
-				
-				<div style="float: left; width: 100%;" tal:define="contents view/getContent" tal:condition="contents" tal:repeat="content contents | nothing">
-					
-					<div>
-						<img tal:condition="content/image" tal:attributes="src string: ${content/image}/image_thumb">
-						<h1 tal:condition="content/title" tal:content="content/title"></h1>
-						<h2 tal:condition="content/subtitle" tal:content="content/subtitle"></h2>
-						<span tal:condition="content/description" tal:content="content/description"></span>
 					</div>
-					
-					<div tal:condition="content/topics" tal:repeat="topic content/topics | nothing">
-						<h2 tal:content="topic/title_topic"></h2>
-						<span tal:content="topic/description_topic"></span>
-						<img tal:condition="topic/image_topic" tal:attributes="src string: ${topic/image_topic}/image_preview">
+					<div class="VisualClear"></div>
+            	</div>	
+				<div class="bk_sombra" tal:define="contents view/getContent | nothing" tal:condition="contents" tal:repeat="content contents" tal:attributes="id content/id | nothing">
+					<div class="funcionalidade">
+						<div class="topo_funcionalidade">
+							<div class="imagem_topo">
+								<img tal:condition="content/image" tal:attributes="src string: ${content/image}/image_thumb" alt="" src="/++theme++vindula.liberiuntheme/imagens/img_funcionalidade01.png"/>
+							</div>
+							<div class="titulos">
+								<div class="titulo_funcionalidade">
+									<h1 tal:condition="content/title" tal:content="content/title">title</h1>
+								</div>
+								<div class="titulo_descricao">
+									<h1 tal:condition="content/subtitle" tal:content="content/subtitle">subtitle</h1>
+								</div>
+							</div>
+							<div class="link_topo">
+								<a href="#vindula-features" title="Topo">Topo</a>
+							</div>
+							<div class="VisualClear"></div>
+							<div class="descricao_funcionalidade">
+								<h2 tal:condition="content/description" tal:content="content/description">description</h2>
+							</div>
+						</div>
+						<div class="conteudo_funcionalidade" tal:define="topics content/topics | nothing" tal:condition="topics">
+							<div class="accordion width_21">
+								<ul>
+									<li class="link_off" tal:repeat="topic topics" tal:attributes="id topic/id_topic">
+										<h3 class="accordionButton" tal:content="topic/title_topic">Layout</h3>
+										<div class="accordionContent">
+											<p tal:content="topic/description_topic">Para maximizar a visualização das notícias na Homepage, foi desenvolvido uma área de destaques onde podem ser selecionada vários itens:</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="img_funcionalidade width_21">
+								<tal:rep  repeat="topic topics">
+									<a tal:attributes="href string: ${topic/image_topic}" class="image_accordion"><img class="imagemAccordionOff" tal:attributes="src string: ${topic/image_topic}/image_preview; id topic/id_topic"/></a>
+								</tal:rep>
+							</div>
+							<div class="VisualClear"></div>
+						</div>
 					</div>
-					
 				</div>
-				
             </div>
         </metal:content-core>
     </metal:main>

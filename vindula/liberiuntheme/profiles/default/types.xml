@@ -6,5 +6,7 @@
   <object name="vindula.liberiuntheme.content.pricing" meta_type="Dexterity FTI" />
   <object name="vindula.liberiuntheme.content.features" meta_type="Dexterity FTI" />
   <object name="vindula.liberiuntheme.content.featuresection" meta_type="Dexterity FTI" />
+  <object name="vindula.liberiuntheme.content.featuretopic" meta_type="Dexterity FTI" />
+  <object name="vindula.liberiuntheme.content.featureprofile" meta_type="Dexterity FTI" />
   
 </object>

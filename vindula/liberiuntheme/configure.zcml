@@ -29,6 +29,7 @@
   <!-- Include the sub-packages that use their own configure.zcml files. -->
   <!--include package=".browser" /-->
   
+  <!-- Registering a static resource directory Ex: ++resource++vindula.liberiuntheme.js/ -->
   <browser:resourceDirectory
   	name="vindula.liberiuntheme.js"
   	directory="./static/js"

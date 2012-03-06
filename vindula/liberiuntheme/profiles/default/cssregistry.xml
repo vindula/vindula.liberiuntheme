@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<object name="portal_css">
+
+ <stylesheet title="vindula_themeliberiun.css"
+    id="++theme++vindula.liberiuntheme/css/vindula_themeliberiun.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>	  
+	
+ <stylesheet title="public.css"
+    id="++theme++vindula.liberiuntheme/css/public.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>	  
+	
+ <stylesheet title="IEFixes.css"
+    id="++theme++vindula.liberiuntheme/css/IEFixes.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+	
+ <stylesheet title="member.css"
+    id="++theme++vindula.liberiuntheme/css/member.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+	
+ <stylesheet title="columns.css"
+    id="++theme++vindula.liberiuntheme/css/columns.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+	
+ <stylesheet title="portlets.css"
+    id="++theme++vindula.liberiuntheme/css/portlets.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+
+ <stylesheet title="ploneKss.css"
+    id="++theme++vindula.liberiuntheme/css/ploneKss.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+	
+ <stylesheet title="tinymce.css"
+    id="++theme++vindula.liberiuntheme/css/tinymce.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+	
+ <stylesheet title="topo.css"
+    id="++theme++vindula.liberiuntheme/css/topo.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+
+ <stylesheet title="conteudo.css"
+    id="++theme++vindula.liberiuntheme/css/conteudo.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+	
+ <stylesheet title="titulos.css"
+    id="++theme++vindula.liberiuntheme/css/titulos.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+	
+ <stylesheet title="rodape.css"
+    id="++theme++vindula.liberiuntheme/css/rodape.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="1" expression=""/>
+	  
+</object>

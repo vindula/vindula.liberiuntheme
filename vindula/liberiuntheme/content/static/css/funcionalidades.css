@@ -1,0 +1,210 @@
+/* Funcionalidades */
+
+.width_20{
+    width: 31.2%;
+}
+
+.width_21{
+    width: 48.7%;
+}
+
+#portal-column-content{
+    background:#ffffff;
+}
+
+#boxes_funcionalidade{
+    margin:0 0 0 1.6em;
+}
+
+#boxes_funcionalidade h2{
+    color: #636363;
+    margin: 0 0 1.5em;
+}
+
+.coluna_boxes{
+    float: left;
+    padding: 0 1.58em 0 0;
+}
+
+.sombra_box{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 0.1em solid #EBEBEB;
+    box-shadow: 0 0 0.3em #888888;
+    margin: 0 0 1.5em;
+    padding: 0.1em;
+    -moz-box-shadow: 0 0 0.3em #888888;
+    -webkit-box-shadow: 0 0 0.3em #888888;
+}
+
+.bk_box{
+    background: none repeat scroll 0 0 #F5F5F5;
+    padding: 1.4em;
+}
+
+#boxes_funcionalidade .box_destaque {
+    height: 230px;
+}
+
+#boxes_funcionalidade .box_destaque h2{
+    color: #000000;
+    float: left;
+    line-height: 1em;
+    margin: 0;
+}
+
+#boxes_funcionalidade .box_destaque img{
+    border: 0.1em solid #EAEAEA;
+    float: right;
+}
+
+#boxes_funcionalidade .box_destaque p{
+    clear: both;
+    padding: 1em 0 0;
+}
+
+.box_secundario h3{
+    color: #000000;
+    line-height: 0.9em;
+}
+
+#boxes_funcionalidade .box_secundario img {
+    border: 0.1em solid #EAEAEA;
+    margin: 1.5em 0 0;
+}
+
+.bk_sombra{
+    background:url("/++theme++vindula.liberiuntheme/imagens/bk_funcionalidades.png") no-repeat scroll center top transparent;
+    margin: 3em 0 0;
+    padding: 5em 1.5em 0;
+}
+
+.funcionalidade{
+    margin: 0 4.8em;
+}
+
+.imagem_topo{
+    float: left;
+    margin: 0 1.5em 0 0;
+}
+
+.titulos{
+    float: left;
+    padding: 1.2em 0 0;
+}
+
+#content .titulo_funcionalidade h1{
+    color: #000000;
+    margin: 0;
+    text-transform: none;
+}
+
+#content .titulo_descricao h1{
+    color: #636363;
+    line-height: 1em;
+    margin: 0;
+}
+
+.link_topo{
+    float:right;
+}
+
+#content .link_topo a:link {
+    background: url("/++theme++vindula.liberiuntheme/imagens/seta_link.png") no-repeat scroll left center transparent;
+    color: #636363;
+    padding: 0 0 0 2.5em;
+}
+
+#content .link_topo a:hover {
+    color: #636363 !important;
+}
+
+#content .link_topo a:visited {
+    color: #636363;
+}
+
+.descricao_funcionalidade{
+    margin: 1.2em 0 0;
+}
+
+.descricao_funcionalidade h2{
+    color: #636363;
+    font-weight: normal;
+}
+
+.accordion{
+    float: left;
+    font-size: 110%;
+    padding: 1.5em 0 0;
+}
+
+#content .accordion ul {
+    list-style: none outside none;
+    margin: 0;
+}
+
+#content .accordion ul li{
+    border-bottom: 0.1em solid #C2C2C2;
+    margin: 0 0 1em;
+    padding: 0 0 1em;
+}
+
+#content .accordion ul li a{
+    color: #000000;
+    font-weight: bold;
+	border: medium none;
+}
+
+#content .accordion ul li a:hover{
+    color: #000000 !important;  
+}
+
+#content .accordion ul li a:visited{
+    color: #000000;  
+}
+
+#content div.accordionContent {
+    display: none;
+}
+
+#content img.imagemAccordionOff {
+    display: none;
+}
+
+#content img.imagemAccordionOn {
+    display: block;
+}
+
+h3.accordionButton {
+	cursor: pointer;
+	color: #000;
+}
+
+.link_on h3{
+    background: url("/++theme++vindula.liberiuntheme/imagens/seta_on.png") no-repeat scroll left center transparent;
+    padding: 0 0 0 2em;
+}
+
+.link_off h3{
+    background: url("/++theme++vindula.liberiuntheme/imagens/seta_off.png") no-repeat scroll left center transparent;
+    margin: 0 0 0 0.3em;
+    padding: 0 0 0 1.5em;
+}
+
+.conteudo_funcionalidade{
+    margin: 1.5em 0 0;
+    width:100%;
+}
+
+.img_funcionalidade{
+    float: right;
+}
+
+#content .link_on span p{
+    border-top: 0.1em solid #C2C2C2;
+    margin: 1em 0 0;
+    padding: 1.2em 0 0;
+}
+
+#content .accordion ul li.link_on{
+    border-bottom: none;
+}

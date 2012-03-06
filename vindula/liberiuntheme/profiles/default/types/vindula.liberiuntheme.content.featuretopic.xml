@@ -1,28 +1,24 @@
 <?xml version="1.0"?>
-<object name="vindula.liberiuntheme.content.featuresection" 
+<object name="vindula.liberiuntheme.content.featuretopic" 
    		meta_type="Dexterity FTI"
    		i18n:domain="vindula.liberiuntheme" 
 		xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  
  <!-- Basic metadata -->
- <property name="title" i18n:translate="">Nova Funcionalidade</property>
- <property name="description" i18n:translate="">Conteúdo que define uma nova funcionalidade do produto.</property>
- <property name="content_icon">/++theme++vindula.liberiuntheme/images/icons/featuresection.png</property>
+ <property name="title" i18n:translate="">Caracteristica da funcionalidade</property>
+ <property name="description" i18n:translate="">Conteúdo para adicionar uma caracteristica de uma funcionalidade.</property>
+ <property name="content_icon">/++theme++vindula.liberiuntheme/images/icons/featuretopic.png</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">True</property>
- <property name="filter_content_types">True</property>
+ <property name="filter_content_types">False</property>
  <property name="allowed_content_types">
- 	<element value="vindula.liberiuntheme.content.featuretopic"/>
  </property>
 
  <!-- schema interface -->
- <property name="schema">vindula.liberiuntheme.content.featuresection.IFeatureSection</property>
+ <property name="schema">vindula.liberiuntheme.content.featuretopic.IFeatureTopic</property>
 
  <!-- add permission -->
  <property name="add_permission">cmf.AddPortalContent</property>
- 
- <!-- class used for content items -->
- <property name="klass">plone.dexterity.content.Container</property>
  
  <!-- enabled behaviors -->
  <property name="behaviors">

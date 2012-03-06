@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
-<object name="vindula.liberiuntheme.content.featuresection" 
+<object name="vindula.liberiuntheme.content.featureprofile" 
    		meta_type="Dexterity FTI"
    		i18n:domain="vindula.liberiuntheme" 
 		xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  
  <!-- Basic metadata -->
- <property name="title" i18n:translate="">Nova Funcionalidade</property>
- <property name="description" i18n:translate="">Conteúdo que define uma nova funcionalidade do produto.</property>
- <property name="content_icon">/++theme++vindula.liberiuntheme/images/icons/featuresection.png</property>
+ <property name="title" i18n:translate="">Novo Perfil de Usuário</property>
+ <property name="description" i18n:translate="">Conteúdo onde vão ficar as funcionalidades por perfil de usuário.</property>
+ <property name="content_icon">/++theme++vindula.liberiuntheme/images/icons/featureprofile.png</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types">
- 	<element value="vindula.liberiuntheme.content.featuretopic"/>
+ 	<element value="vindula.liberiuntheme.content.featuresection"/>
  </property>
 
  <!-- schema interface -->
- <property name="schema">vindula.liberiuntheme.content.featuresection.IFeatureSection</property>
+ <property name="schema">vindula.liberiuntheme.content.featureprofile.IFeatureProfile</property>
 
  <!-- add permission -->
  <property name="add_permission">cmf.AddPortalContent</property>
@@ -27,7 +27,6 @@
  <!-- enabled behaviors -->
  <property name="behaviors">
  	 <element value="plone.app.content.interfaces.INameFromTitle" />
-	 <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
 	 <element value="plone.app.dexterity.behaviors.metadata.IOwnership"/>
 	 <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
 	 <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>

@@ -19,23 +19,28 @@ class FeaturesView(grok.View):
     grok.name('view')
     
     def getProfiles(self):
-        results = self.context.values('ATFolder')
+        results = self.context.values()
         L = []
         if results:
             for result in results:
-                D = {}
-                D['title'] = result.Title()
-                D['description'] = result.Description()
-                D['contents'] = []
-                if result.values():
-                    contents = result.values()
-                    for content in contents:
-                        if content.portal_type == 'vindula.liberiuntheme.content.featuresection':
-                            DC = {}
-                            DC['title_content'] = content.Title()
-                            DC['description_content'] = content.Description()
-                            D['contents'].append(DC)
-                L.append(D)
+                if result.portal_type == 'vindula.liberiuntheme.content.featureprofile':
+                    D = {}
+                    D['title'] = result.Title()
+                    D['description'] = result.description_profile
+                    D['image'] = '/++theme++vindula.liberiuntheme/imagens/img_box_destaque.jpg'
+                    if result.image_profile:
+                        D['image'] = '%s/image_thumb' % result.image_profile.to_object.absolute_url()
+                    D['contents'] = []
+                    if result.values():
+                        contents = result.values()
+                        for content in contents:
+                            if content.portal_type == 'vindula.liberiuntheme.content.featuresection':
+                                DC = {}
+                                DC['id_content'] = content.getId()
+                                DC['title_content'] = content.Title()
+                                DC['description_content'] = content.Description()
+                                D['contents'].append(DC)
+                    L.append(D)
                 
         return L
         
@@ -54,6 +59,7 @@ class FeaturesView(grok.View):
             for result in results:
                 obj = result.getObject()
                 D = {}
+                D['id'] = obj.getId()
                 D['title'] = obj.Title()
                 D['description'] = obj.Description()
                 D['subtitle'] = obj.subtitle
@@ -64,11 +70,13 @@ class FeaturesView(grok.View):
                 if obj.values():
                     topics = obj.values()
                     for topic in topics:
-                        if topic.portal_type == 'Image':
+                        if topic.portal_type == 'vindula.liberiuntheme.content.featuretopic':
                             DT = {}
+                            DT['id_topic'] = topic.getId()
                             DT['title_topic'] = topic.Title()
                             DT['description_topic'] = topic.Description()
-                            DT['image_topic'] = topic.absolute_url()
+                            if topic.image_topic:
+                                DT['image_topic'] = topic.image_topic.to_object.absolute_url()
                             D['topics'].append(DT)
                             
                 L.append(D)

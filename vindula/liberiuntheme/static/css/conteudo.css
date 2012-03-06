@@ -370,7 +370,7 @@ ul.opcoes{
 /* Navegação */
 
 .bk-column-one{
-	background: url("../images/bkgs/bk_nav.png") repeat-y scroll right center #F6F6F6;
+	background: url("/++theme++vindula.liberiuntheme/images/bkgs/bk_nav.png") repeat-y scroll right center #F6F6F6;
 }
 
 dl.portlet ul.navTreeLevel0 > .navTreeItem{
@@ -635,7 +635,7 @@ div.descricao_titulo h4{
 }
 
 .bk-column-two{
-    background: url("../images/bkgs/bk_portlets.png") repeat-y scroll left center #F6F6F6;
+    background: url("/++theme++vindula.liberiuntheme/images/bkgs/bk_portlets.png") repeat-y scroll left center #F6F6F6;
     padding: 0.7em 0 ;
 }
 

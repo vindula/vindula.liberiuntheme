@@ -9,25 +9,32 @@ from z3c.relationfield.schema import RelationList, RelationChoice
 from Products.CMFCore.utils import getToolByName
 
 #Interface
-class IFeatureSection(form.Schema):
+class IFeatureProfile(form.Schema):
     """ Feature Section """
     
-    subtitle = schema.TextLine(
-        title=_(u"Subtítulo"),
-        description=_(u"Insira um texto para aparacer em baixo do título."),
-        required=False,
+    title = schema.TextLine(
+        title=_(u"Título"),
+        description=_(u"Insira o título do perfil."),
+        required=True,
         )
-    
-    image_title = RelationChoice(
-        title=_(u"Imagem do título"),
-        description=_(u"Selecione a imagem que aparecerá do lado esquerdo do título, recomendasse uma imagem 66x66."),
+
+    description_profile = schema.Text(
+        title=_(u"Descrição"),
+        description=_(u"Insira uma descrição do perfil, no máximo 280 caracteres."),
+        required=True,
+        max_length=280,
+        )
+
+    image_profile = RelationChoice(
+        title=_(u"Imagem do Perfil"),
+        description=_(u"Selecione a imagem que aparecerá do lado direito do título do perfil, recomendasse uma imagem 79x79."),
         source=ObjPathSourceBinder( portal_type = 'Image',),
         required=False,
         )
     
 #View
-class FeatureSectionView(grok.View):
-    grok.context(IFeatureSection)
+class FeatureProfileView(grok.View):
+    grok.context(IFeatureProfile)
     grok.require('zope2.View')
     
     def render(self):

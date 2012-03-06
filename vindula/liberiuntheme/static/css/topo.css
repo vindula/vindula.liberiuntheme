@@ -70,7 +70,7 @@
 
 input.searchField{
     -moz-appearance: none;
-    background: url("../images/bkgs/bk_busca.png") repeat-x scroll 0 0 #FFFFFF;
+    background: url("/++theme++vindula.liberiuntheme/images/bkgs/bk_busca.png") repeat-x scroll 0 0 #FFFFFF;
     border: 0.1em solid #FFFFFF;
     font-weight: bold;
     padding: 0.5em;
@@ -78,7 +78,7 @@ input.searchField{
 }
 
 .searchButton{
-    background: url("../images/icons/lupa.png") no-repeat scroll center center #FAA61A;
+    background: url("/++theme++vindula.liberiuntheme/images/icons/lupa.png") no-repeat scroll center center #FAA61A;
     border: 0.1em solid #FFFFFF;
     cursor: pointer;
     padding: 0.4em 1.25em;
@@ -109,7 +109,7 @@ input.searchField{
 }
 
 #portal-globalnav ul {
-    background: url("../images/bkgs/bk_menu.png") repeat-x scroll 0 0 transparent;
+    background: url("/++theme++vindula.liberiuntheme/images/bkgs/bk_menu.png") repeat-x scroll 0 0 transparent;
     border-bottom: 0.4em solid #F8991D;
     position: absolute;
     width: 100%;
