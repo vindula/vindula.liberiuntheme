@@ -88,14 +88,8 @@ q {
 #portal-header {
     position: relative;
     z-index: 2;
-	background: rgb(231,235,238); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(231,235,238,1) 43%, rgba(197,201,204,1) 64%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(43%,rgba(231,235,238,1)), color-stop(64%,rgba(197,201,204,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(231,235,238,1) 43%,rgba(197,201,204,1) 64%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(231,235,238,1) 43%,rgba(197,201,204,1) 64%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(231,235,238,1) 43%,rgba(197,201,204,1) 64%); /* IE10+ */
-	background: linear-gradient(top,  rgba(231,235,238,1) 43%,rgba(197,201,204,1) 64%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7ebee', endColorstr='#c5c9cc',GradientType=0 ); /* IE6-9 */
+	margin: 0 auto;
+	width: 992px;
 }
 #portal-logo {
     display: inline-block;

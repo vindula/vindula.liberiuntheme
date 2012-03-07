@@ -2,6 +2,64 @@
  * * * PLONE CSS UPDATES * * *
  */
 
+/*Begin Portal Header*/
+#portal-globalnav{
+	background: transparent;
+}
+
+#portal-globalnav ul{
+	background: transparent;
+	border-bottom: transparent;
+}
+
+#portal-top {
+	background: url("/++theme++vindula.liberiuntheme/images/bkgs/bk_header.png") repeat scroll 0 0 transparent;
+    height: 175px;
+    margin-bottom: 15px;
+}
+
+/*End Portal Header*/
+
+/*Begin Portal Footer*/
+
+#portal-down {
+	background: none repeat scroll 0 0 #464646
+}
+
+#portal-footer-ext {
+	background: none repeat scroll 0 0 #363636;
+}
+
+#portal-footer {
+	background: none;
+	width: 992px;
+	margin: 0 auto;
+}
+
+#portal-colophon-wrapper {
+	margin: 0 auto;
+    width: 992px;
+}
+
+#portal-siteactions-ext {
+	background: none repeat scroll 0 0 #363636;
+}
+
+#portal-siteactions{
+	background: none;
+	margin: 0 auto;
+    width: 992px;
+}
+
+#kss-spinner {
+	margin: 1.9em auto 1em;
+    width: 992px;
+}
+
+
+
+/*End Portal Footer*/
+
 /*Width of page*/
 #visual-portal-wrapper {
     width: 1002px;
