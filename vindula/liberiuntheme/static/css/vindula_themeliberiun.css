@@ -12,6 +12,8 @@
 .display-none { display:none; }
 #visual-portal-wrapper { margin:0 auto; }
 
+div.cell { float: left; }
+
 /* Edit Bar Background Color... */
 #edit-bar {
     background-color: #A6A6A6;

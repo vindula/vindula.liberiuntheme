@@ -316,7 +316,7 @@ a.managePortletsFallback {
 }
 dl.portlet ul.navTree li a {
     border: medium none;
-    display: block;
+    display: inline;
 }
 dl.portlet ul.navTree li a:hover {
 }
@@ -1627,7 +1627,7 @@ div.overlay .formControls a {
     background: url("contenttypes-sprite.png") no-repeat scroll 0 -212px transparent;
 }
 .icons-on .contenttype-folder {
-    background: url("contenttypes-sprite.png") no-repeat scroll 0 -644px transparent;
+    background: url("contenttypes-sprite.png") no-repeat scroll 0 -648px transparent;
 }
 .icons-on .contenttype-link {
     background: url("contenttypes-sprite.png") no-repeat scroll 0 -1076px transparent;
