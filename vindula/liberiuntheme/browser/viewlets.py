@@ -78,7 +78,10 @@ class NavigationViewlet(grok.Viewlet):
         urltool = getSite().portal_url
         caminho = {'query': '/'.join(portal.getPhysicalPath()), 'depth': 1}
         ctool = getSite().portal_catalog
-        menus = ctool(portal_type=types, path=caminho, sort_on='getObjPositionInParent')   
+        menus = ctool(portal_type=types,
+                      path=caminho,
+                      review_state='published',
+                      sort_on='getObjPositionInParent',)   
         #menus = portal.objectValues(['ATFolder','ATLink','vindula.content.content.vindulacontentmacro'])
         if menus:
             L = []
