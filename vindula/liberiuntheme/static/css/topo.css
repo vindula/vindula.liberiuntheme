@@ -127,17 +127,9 @@ input.searchField{
     font-weight: bold;
     min-width: 1em;
     padding: 0.7em 1.5em;
-	padding-bottom: 11px \0/IE9; /*CSS for IE9*/
+	padding-bottom: 11px;
 	text-align: center;
 }
-
-/*Begin CSS for Google Chrome*/
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-	#portal-globalnav li a {
-		padding-bottom: 11px;
-	}
-}
-/*End CSS for Google Chrome*/
 
 .selected ul li a{
 	background: #414042;
