@@ -13,7 +13,7 @@ h1, h2 {
 }
 
 #content a:link, dl.portlet a:link{
-	border: none;
+	border: none !important;
 }
 
 #content .descricao a:hover{
@@ -291,6 +291,7 @@ ul.opcoes{
     font-size: 75%;
     font-weight: bold;
     padding: 0.4em 0 0;
+	margin-bottom: 0 !important;
 }
 
 .paginacao_box img{
@@ -300,11 +301,13 @@ ul.opcoes{
 .topo_box{
     background: none repeat scroll 0 0 #464646;
     padding: 0.5em 0.4em 0.5em 0.625em;
+	min-height: 23px;
 }
 
 .topo_box h4{
     color: #FFFFFF;
     float: left;
+	line-height: 2em;
     text-transform: uppercase;
 }
 
