@@ -18,25 +18,31 @@
 
 					<!-- start: BANNER -->
 					<div id="banner_home" tal:condition="context/banner">
-						<input id="cycle-timeout" type="hidden" tal:attributes="value context/time_transition">
-						<input id="cycle-height" type="hidden" tal:attributes="value context/banner_height">
-						<div id="box_banner">
-							<div id="cont_banner">
-								<div tal:repeat="img context/banner">
-									<img tal:condition="img/to_object" 
-									     tal:attributes="src img/to_object/absolute_url; alt img/to_object/title;">
+						<tal:def define="banners view/getBanner">
+							<input id="cycle-timeout" type="hidden" tal:attributes="value context/time_transition">
+							<input id="cycle-height" type="hidden" tal:attributes="value context/banner_height">
+							<div id="box_banner">
+								<div id="">
+									<div tal:repeat="banner banners">
+										<tal:cond condition="not: banner/url_image">
+											<img tal:attributes="src banner/image; alt banner/title;">	
+										</tal:cond>
+										<tal:cond condition="banner/url_image">
+											<a target="_blank" tal:attributes="href banner/url_image"><img tal:attributes="src banner/image; alt banner/title;"></a>
+										</tal:cond>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="paginacao" tal:condition="python: len(context.banner) > 1">
-							<a id="cycle-prev" class="pag_anterior" title="Anterior">
-								<img src="/++theme++vindula.liberiuntheme/images/buttons/anterior.png" />
-							</a>
-							<p class="cycle-nav" id="cycle-nav"></p><p tal:content="python: '/' + str(len(context.banner))"></p>
-							<a id="cycle-next" class="pag_proximo" title="Pr&oacute;ximo">
-								<img src="/++theme++vindula.liberiuntheme/images/buttons/proximo.png" />
-							</a>
-						</div>
+							<div class="paginacao" tal:condition="python: len(context.banner) > 1">
+								<a id="cycle-prev" class="pag_anterior" title="Anterior">
+									<img src="/++theme++vindula.liberiuntheme/images/buttons/anterior.png" />
+								</a>
+								<p class="cycle-nav" id="cycle-nav"></p><p tal:content="python: '/' + str(len(context.banner))"></p>
+								<a id="cycle-next" class="pag_proximo" title="Pr&oacute;ximo">
+									<img src="/++theme++vindula.liberiuntheme/images/buttons/proximo.png" />
+								</a>
+							</div>
+						</tal:def>
 					</div>
 					<!-- end: BANNER -->
 					

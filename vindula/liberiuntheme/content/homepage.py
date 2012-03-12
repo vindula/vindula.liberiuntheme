@@ -35,7 +35,7 @@ class IHomePage(form.Schema):
         value_type=RelationChoice(
             title=_(u"Banner"),
             source=ObjPathSourceBinder(
-                portal_type = 'Image',
+                portal_type = ['Image','Banner',]
                 )
             ),
         required=False,
@@ -470,6 +470,34 @@ class HomePageView(grok.View):
             n += 1
         
         return contents
+    
+    def getBanner(self):
+        L = []
+        if self.context.banner:
+            for banner in self.context.banner:
+                obj = banner.to_object
+                type_obj = obj.Type()
+                D={}
+                if type_obj == 'Image':
+                    D['image'] = obj.absolute_url()
+                    D['url_image'] = ''
+                    D['title'] = obj.title
+                elif type_obj == 'Banner':
+                    if obj.getLink():
+                        D['url_image'] = ''
+                        D['image'] = ''
+                        D['title'] = obj.title
+                        if obj.getRawImagem_banner():
+                            D['image'] = obj.getRawImagem_banner().absolute_url()
+                            
+                        link = obj.getLink()
+                        if link: 
+                            if link[:4] == 'http':
+                                D['url_image'] = link
+                            else:
+                                D['url_image'] = 'http://%s' % link
+                L.append(D)
+        return L
    
     def limitTextSize(self, size, text):
         if len(text) > size:
