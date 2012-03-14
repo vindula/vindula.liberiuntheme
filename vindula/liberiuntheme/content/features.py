@@ -29,7 +29,8 @@ class FeaturesView(grok.View):
                     D['description'] = result.description_profile
                     D['image'] = '/++theme++vindula.liberiuntheme/imagens/img_box_destaque.jpg'
                     if result.image_profile:
-                        D['image'] = '%s/image_thumb' % result.image_profile.to_object.absolute_url()
+                        if result.image_profile.to_object:
+                            D['image'] = '%s/image_thumb' % result.image_profile.to_object.absolute_url()
                     D['contents'] = []
                     if result.values():
                         contents = result.values()
