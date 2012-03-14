@@ -387,9 +387,12 @@ class HomePageView(grok.View):
             L = []
             if field:
                 for obj in field:
-                    obj = obj.to_object
+                    try:
+                        obj = obj.to_object
+                    except:
+                        obj = obj.getObject()
                     if obj is None:
-                        objs.remove(obj)
+                        field.remove(obj)
                         continue
                     D = {}
                     D['title'] = obj.Title()
