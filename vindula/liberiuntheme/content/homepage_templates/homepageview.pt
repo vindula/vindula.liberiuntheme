@@ -55,7 +55,7 @@
 							</div>
 							
 							<div class="info_destaque" tal:define="img context/highlight_left_image_content">
-								<div class="img_descricao" tal:condition="img">
+								<div class="img_descricao" tal:condition="img/to_object">
 									<img alt="" tal:attributes="src string: ${img/to_object/absolute_url}/image_preview">
 								</div>
 								
@@ -74,7 +74,7 @@
 							</div>
 							
 							<div class="info_destaque" tal:define="img context/highlight_right_image_content_1">
-                                <div class="img_descricao" tal:condition="img">
+                                <div class="img_descricao" tal:condition="img/to_object">
                                     <img alt="" tal:attributes="src string: ${img/to_object/absolute_url}/image_preview">
                                 </div>
                                 
@@ -87,7 +87,7 @@
                             </div>
 							
 							<div class="info_destaque" tal:define="img context/highlight_right_image_content_2">
-                                <div class="img_descricao" tal:condition="img">
+                                <div class="img_descricao" tal:condition="img/to_object">
                                     <img alt="" tal:attributes="src string: ${img/to_object/absolute_url}/image_preview">
                                 </div>
                                 
