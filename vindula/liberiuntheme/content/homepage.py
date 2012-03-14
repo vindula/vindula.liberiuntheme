@@ -476,7 +476,10 @@ class HomePageView(grok.View):
         if self.context.banner:
             for banner in self.context.banner:
                 obj = banner.to_object
-                type_obj = obj.Type()
+                try:
+                    type_obj = obj.Type()
+                except:
+                    return L
                 D={}
                 if type_obj == 'Image':
                     D['image'] = obj.absolute_url()
