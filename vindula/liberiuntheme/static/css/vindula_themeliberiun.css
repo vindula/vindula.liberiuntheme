@@ -18,6 +18,10 @@
     margin-bottom: 15px;
 }
 
+#portal-personaltools-wrapper{
+	min-height: 32px;
+}
+
 .img-contato {
 	height: 26px;
     margin: 0 0 15px 42px;
