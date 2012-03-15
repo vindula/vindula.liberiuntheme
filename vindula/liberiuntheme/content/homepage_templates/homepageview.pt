@@ -22,7 +22,7 @@
 							<input id="cycle-timeout" type="hidden" tal:attributes="value context/time_transition">
 							<input id="cycle-height" type="hidden" tal:attributes="value context/banner_height">
 							<div id="box_banner">
-								<div id="">
+								<div id="cont_banner">
 									<div tal:repeat="banner banners">
 										<tal:cond condition="not: banner/url_image">
 											<img tal:attributes="src banner/image; alt banner/title;">	
