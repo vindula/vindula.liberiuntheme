@@ -64,7 +64,7 @@
 }
 
 #searchGadget {
-    margin: -1px 0 0;
+	height: 13px;
     width: 16em;
 }
 
@@ -81,9 +81,15 @@ input.searchField{
     background: url("/++theme++vindula.liberiuntheme/images/icons/lupa.png") no-repeat scroll center center #FAA61A;
     border: 0.1em solid #FFFFFF;
     cursor: pointer;
-    padding: 0.4em 1.25em;
     width: 3.2em;
 	color: transparent;
+	
+	height: 25px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	
+	
+	
 }
 
 .searchSection{

@@ -20,7 +20,7 @@
 }
 
 #portal-footer #portal-searchbox{
-	 margin: 1.6em 1.25em 1.25em;
+	 margin: 3em 1.25em 1.25em;
 }
 
 #portal-colophon {
@@ -45,6 +45,14 @@
     float: left;
 }
 
+#nav_rodape li:first-child {
+    padding: 0 10px 0 0;
+}
+
+#nav_rodape li:last-child {
+    padding: 0 0 0 10px;
+}
+
 #nav_rodape li ul{
     margin: 0.3em 0 0;
 	position:relative;
@@ -54,7 +62,7 @@
     display: block;
     float: none;
     line-height: 1.6em;
-    padding: 0;
+    padding: 0 !important;
 }
 
 #nav_rodape li ul li a{
@@ -81,7 +89,7 @@
     border-right: 0.1em solid #C2C2C2;
     color: #C2C2C2;
     font-weight: bold;
-    padding: 0 0.5em 0 0.3em;
+    padding: 0 0.5em 0 0;
 }
 
 #portal-siteactions li a:hover{

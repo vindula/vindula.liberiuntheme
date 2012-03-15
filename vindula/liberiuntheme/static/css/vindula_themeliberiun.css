@@ -27,6 +27,24 @@
     margin: 0 0 15px 42px;
 }
 
+/*Fix for Fire Fox*/
+@-moz-document url-prefix() {
+	.searchButton{
+		height: 26px;
+	    margin: 0;
+	    padding: 0 0 2px;
+	}
+}
+
+/*Fix for IE8*/
+@media \0screen {
+  .searchButton{
+		height: 29px;
+	    margin: 0;
+	    padding: 3px 0 0 0;
+	}
+}
+
 /*End Portal Header*/
 
 /*Begin Portal Footer*/
