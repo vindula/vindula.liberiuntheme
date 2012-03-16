@@ -135,6 +135,7 @@
     float: left;
     font-size: 110%;
     padding: 1.5em 0 0;
+	width: 395px;
 }
 
 #content .accordion ul {
@@ -197,6 +198,7 @@ h3.accordionButton {
 
 .img_funcionalidade{
     float: right;
+	width: 395px;
 }
 
 #content .link_on span p{

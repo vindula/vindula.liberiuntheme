@@ -42,6 +42,19 @@ $j(document).ready(function(){
 	
 	$j('a.image_accordion').fancybox();
  
-	//HIDE THE DIVS ON PAGE LOAD	
-	$j("span.accordionContent").hide();
+	//Show only the first feature
+	var div_accordion = $j('div.conteudo_funcionalidade');
+	var item_li, item_img, item_content;
+	for(var item in div_accordion.toArray())
+	{
+		item = div_accordion.eq(item);
+		item_li = item.find('li').first();
+		item_img = item.find('.image_accordion img').first();
+		item_content = item.find('.accordionContent').first();
+		item_li.removeClass('link_off');
+		item_li.addClass('link_on');
+		item_img.removeClass('imagemAccordionOff');
+		item_img.addClass('imagemAccordionOn');
+		item_content.slideDown('normal');
+	}
 });

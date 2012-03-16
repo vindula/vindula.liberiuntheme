@@ -27,7 +27,7 @@
     margin: 0 0 15px 42px;
 }
 
-/*Fix for Fire Fox*/
+/*Fix for Firefox*/
 @-moz-document url-prefix() {
 	.searchButton{
 		height: 26px;
