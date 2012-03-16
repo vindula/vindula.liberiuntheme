@@ -66,17 +66,12 @@ h1, h2 {
 }
 
 #box_banner{
-    border: 0.1em solid #EBEBEB;
     margin: 0 0 0.9em;
     padding: 0.1em;
     text-align: center;
-    -moz-box-shadow: 0 0 0.2em #BCBCBC;
-    -webkit-box-shadow: 0 0 0.2em #BCBCBC;
-    box-shadow: 0 0 0.2em #BCBCBC;
 }
 
 #cont_banner{
-    background: none repeat scroll 0 0 #F5F5F5;
     padding: 0.2em;
 }
 
