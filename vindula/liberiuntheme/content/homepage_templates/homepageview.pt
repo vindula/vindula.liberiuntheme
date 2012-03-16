@@ -33,7 +33,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="paginacao" tal:condition="python: len(context.banner) > 1">
+							<div class="paginacao pag_homepage" tal:condition="python: len(context.banner) > 1">
 								<a id="cycle-prev" class="pag_anterior" title="Anterior">
 									<img src="/++theme++vindula.liberiuntheme/images/buttons/anterior.png" />
 								</a>

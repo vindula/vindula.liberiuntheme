@@ -126,3 +126,6 @@ class NavigationViewlet(grok.Viewlet):
     def isSelected(self, obj):
         if obj.absolute_url() in self.context.REQUEST.get('ACTUAL_URL'):
             return 'selected'
+        
+        if obj.id == 'inicio' and obj.Type() == 'Link' and self.context.Type() == 'Home Page':
+            return 'selected'

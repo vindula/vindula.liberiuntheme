@@ -164,8 +164,12 @@ div.cell { float: left; }
     line-height: 1.3em;
 }
 
+.pag_homepage{
+	margin-right: 10px;
+}
+
 .vindula-portal-logo{
-	margin: 1.125em;
+	margin: 18px 18px 18px 10px;
 	display: inline-block;
 }
 

@@ -26,6 +26,9 @@
 	<copy css:content-children="#navigation-viewlet" css:theme="#portal-globalnav" />
 	<replace css:content="#portal-breadcrumbs" css:theme="#portal-breadcrumbs" />
 	<drop css:content="div.searchSection" />
+	<drop css:content="#portal-breadcrumbs" css:if-content="#vindula-home-page" />
+	
+	
 	
 	<!-- Pega o texto do nivel 1 do breadcrumbs e coloca no titulo da pagina -->
 	<replace css:theme=".titulo_principal h1">
