@@ -490,6 +490,7 @@ class HomePageView(grok.View):
                     if obj.getLink():
                         D['url_image'] = ''
                         D['image'] = ''
+                        D['target'] = obj.getTarget()
                         D['title'] = obj.title
                         if obj.getRawImagem_banner():
                             D['image'] = obj.getRawImagem_banner().absolute_url()

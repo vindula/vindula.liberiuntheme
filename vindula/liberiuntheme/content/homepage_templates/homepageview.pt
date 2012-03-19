@@ -28,7 +28,7 @@
 											<img tal:attributes="src banner/image; alt banner/title;">	
 										</tal:cond>
 										<tal:cond condition="banner/url_image">
-											<a target="_blank" tal:attributes="href banner/url_image"><img tal:attributes="src banner/image; alt banner/title;"></a>
+											<a tal:attributes="href banner/url_image; target banner/target"><img tal:attributes="src banner/image; alt banner/title;"></a>
 										</tal:cond>
 									</div>
 								</div>
