@@ -62,4 +62,7 @@
 		<drop css:content=".documentFirstHeading" />
 	</rules>
 	
+	<!-- Add in any inline scripts, like Google Analytics --> 
+    <after theme-children="/html/body" content="/html/body/div[@id='visual-portal-wrapper']/div/script" /> 
+	
 </rules>

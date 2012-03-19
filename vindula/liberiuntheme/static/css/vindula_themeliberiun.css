@@ -50,7 +50,11 @@
 /*Begin Portal Footer*/
 
 #portal-down {
-	background: none repeat scroll 0 0 #464646
+	background: none repeat scroll 0 0 #464646;
+}
+
+#portal-columns {
+	margin-bottom: 50px;
 }
 
 #portal-footer-ext {
