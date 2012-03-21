@@ -18,6 +18,13 @@ class IFeatureSection(form.Schema):
         required=False,
         )
     
+    image_header = RelationChoice(
+        title=_(u"Imagem superior"),
+        description=_(u"Selecione a imagem que aparecerá abaixo do titulo da funcionalidade, no header, recomendasse uma imagem 257x79."),
+        source=ObjPathSourceBinder( portal_type = 'Image',),
+        required=False,
+        )
+    
     image_title = RelationChoice(
         title=_(u"Imagem do título"),
         description=_(u"Selecione a imagem que aparecerá do lado esquerdo do título, recomendasse uma imagem 66x66."),

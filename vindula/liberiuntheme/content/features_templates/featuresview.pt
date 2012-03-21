@@ -35,7 +35,7 @@
 								<div class="sombra_box" tal:repeat="content profile/contents">
 									<div class="box_secundario bk_box">
 										<a tal:attributes="href string: #${content/id_content}"><h3 tal:content="content/title_content | nothing">Home Page</h3></a>
-										<img alt="" src="/++theme++vindula.liberiuntheme/imagens/img_box_secundario.jpg"/>
+										<img alt="" tal:attributes=" src content/image_content"/>
 									</div>
 								</div>
 							</tal:cond>

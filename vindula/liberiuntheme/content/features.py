@@ -37,6 +37,10 @@ class FeaturesView(grok.View):
                         for content in contents:
                             if content.portal_type == 'vindula.liberiuntheme.content.featuresection':
                                 DC = {}
+                                DC['image_content'] = '/++theme++vindula.liberiuntheme/imagens/img_box_secundario.jpg'
+                                if content.image_header:
+                                    if content.image_header.to_object:
+                                        DC['image_content'] = '%s/image_preview' % content.image_header.to_object.absolute_url()
                                 DC['id_content'] = content.getId()
                                 DC['title_content'] = content.Title()
                                 DC['description_content'] = content.Description()
