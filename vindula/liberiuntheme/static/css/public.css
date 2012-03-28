@@ -360,7 +360,7 @@ body#content {
     margin-top: 0;
 }
 #content p, #content table, #content dl, dl.portlet p, dl.portlet {
-    margin-bottom: 1em;
+    margin-bottom: 1em !important;
 }
 #content ul, #content ol {
 }
