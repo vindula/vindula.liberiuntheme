@@ -82,7 +82,8 @@ h1, h2 {
 }
 
 #cont_banner div{
-   position: relative !important;
+	/*position: relative !important;*/
+   padding: 3px 0 0 3px;
 }
 
 .paginacao{
