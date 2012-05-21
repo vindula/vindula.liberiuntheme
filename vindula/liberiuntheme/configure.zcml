@@ -17,6 +17,7 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <!-- -*- extra stuff goes here -*- -->
+  <five:registerPackage package="." initialize=".initialize" />
   
   <includeDependencies package="." />
   <plone:static directory="static" type="theme" />

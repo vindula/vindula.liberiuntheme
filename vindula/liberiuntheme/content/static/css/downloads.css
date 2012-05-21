@@ -1,0 +1,88 @@
+#vindula-download-page{
+	font-family: Arial;
+	font-size: 12px;
+}
+
+#vindula-download-page a {
+	color: #646464;
+	font-style:normal;
+	text-decoration:underline; 
+}
+
+#banner_home {
+	padding: 0 20px 0 10px;
+	margin-bottom: 20px;
+}
+
+#box_banner {
+	border: none;
+    box-shadow: none;
+	margin: 0;
+}
+
+#cont_banner {
+	background: none;
+}
+
+.other-donloads-header {
+	font-size: 18px;
+}
+
+.underline-gray {
+	border-bottom: 1px solid #D7D7D7;
+    margin: 0 30px 12px 0;
+    padding-bottom: 12px;
+}
+
+.selected-download {
+	width: 303px;
+}
+
+.font-bold {
+	font-weight: bolder;
+}
+
+.largest-title {
+	font-size: 20px;
+	color: #000;
+}
+
+.box-download {
+	border: 1px solid #FFFFFF;
+	outline: 1px solid #D4D4D4;
+	background: none repeat scroll 0 0 #F5F5F5;
+	height:300px;
+}
+
+.padding-20px {
+	padding: 20px
+}
+
+.margin-tpbt-20px {
+	margin-bottom:20px;
+	margin-top:20px;
+}
+
+.margin-rglf-10px {
+	margin-left: 10px;
+	margin-right:10px;
+}
+
+.button-download {
+	width: 260px;
+	height:96px;
+	background: no-repeat url("/++theme++vindula.liberiuntheme/images/download_container/bt_download.png");
+}
+
+.button-download span {
+	color: #FFFFFF;
+    font-size: 12px;
+    left: 7.5em;
+    position: relative;
+    top: 50%;
+	text-decoration:none;
+}
+
+.color-orange {
+	color: #F58220;
+}

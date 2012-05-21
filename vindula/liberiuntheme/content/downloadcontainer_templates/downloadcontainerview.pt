@@ -1,0 +1,124 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="vindula.liberiuntheme">
+	<body>
+	
+		<metal:js fill-slot="javascript_head_slot">
+			<!--script type="text/javascript" src="/++resource++vindula.liberiuntheme.js/cycle.js"></script-->
+		</metal:js>
+		
+		<metal:style fill-slot="style_slot">
+			<link type="text/css" rel="stylesheet" tal:attributes="href string:${view/static}/css/downloads.css"><link>
+		</metal:style>
+
+		<metal:main fill-slot="body">
+		 	<metal:content-core define-macro="body">
+		 		<div id="vindula-download-page">
+
+					<!-- start: BANNER -->
+					<div id="banner_home" tal:condition="context/banner">
+						<tal:def define="banner view/getBanner">
+							<!--input id="cycle-timeout" type="hidden" tal:attributes="value context/time_transition">
+							<input id="cycle-height" type="hidden" tal:attributes="value context/banner_height"-->
+							<div id="box_banner">
+								<div id="cont_banner">
+									<tal:cond condition="not: banner/url_image">
+										<img tal:attributes="src banner/image; alt banner/title;">	
+									</tal:cond>
+									<tal:cond condition="banner/url_image">
+										<a tal:attributes="href banner/url_image; target banner/target"><img tal:attributes="src banner/image; alt banner/title;"></a>
+									</tal:cond>
+								</div>
+							</div>
+							<div class="paginacao pag_homepage" tal:condition="python: len(context.banner) > 1">
+								<a id="cycle-prev" class="pag_anterior" title="Anterior">
+									<img src="/++theme++vindula.liberiuntheme/images/buttons/anterior.png" />
+								</a>
+								<p class="cycle-nav" id="cycle-nav"></p><p tal:content="python: '/' + str(len(context.banner))"></p>
+								<a id="cycle-next" class="pag_proximo" title="Pr&oacute;ximo">
+									<img src="/++theme++vindula.liberiuntheme/images/buttons/proximo.png" />
+								</a>
+							</div>
+						</tal:def>
+					</div>
+					<!-- end: BANNER -->
+					
+					
+					<!-- start: CONTENT COLUMNS -->
+					<div class="row" tal:define="selected_downloads view/getSelectedDownloads | nothing">
+						<tal:cond condition="selected_downloads">
+							<div class="position_left selected-download margin-rglf-10px" tal:repeat="selected_download selected_downloads">
+								
+								<div class="box-download padding-20px">
+									<div tal:condition="selected_download/title">
+										<span class="largest-title font-bold" tal:content="selected_download/title">Title Box</span>
+									</div>
+									
+									<!-- start: BUTTON-->
+									<a tal:attributes="href selected_download/url_button">
+										<div class="button-download margin-tpbt-20px" id="button-download">
+											<span tal:content="structure selected_download/desc_button"> Description button </span>
+										</div>
+									</a>
+									<!-- end: BUTTON-->
+									
+									<!-- start: DOWNLOAD DESCRIPTION-->
+									<div tal:condition="selected_download/description">
+										<p tal:content="selected_download/description"> Description of download</p>
+									</div>
+									<!-- end: DOWNLOAD DESCRIPTION-->
+								</div>
+								
+								<!-- start: ADDITIONAL INFORMATION-->
+								<div class="margin-tpbt-20px">
+									<div tal:condition="selected_download/title_info_comp">
+										<span class="font-bold color-orange" tal:content="selected_download/title_info_comp">Title Addition Information</span>
+									</div>
+									
+									<div class="margin-tpbt-20px" tal:condition="selected_download/desc_info_comp">
+										<span tal:content="structure selected_download/desc_info_comp"> Description of Addition Information</span>
+									</div>
+								</div>
+								<!-- end: ADDITIONAL INFORMATION-->
+							</div>
+						</tal:cond>
+					</div>
+					<!-- end: CONTENT COLUMNS -->
+					
+					
+					<!-- start: PREVIOUS VERSIONS -->
+					<div class="row margin-rglf-10px margin-tpbt-20px" tal:define="other_versions view/getOtherVersions | nothing">
+						<tal:cond condition="other_versions">
+							<div tal:condition="context/title_others" class="underline-gray">
+								<span tal:content="context/title_others" class="other-donloads-header color-orange font-bold">Versoes Anteriores:</span>
+							</div>
+							<p tal:condition="context/description_others" tal:content="context/description_others"><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b></p>
+							<div class="margin-tpbt-20px" tal:repeat="other_version other_versions">
+								<div class="">
+									<div tal:condition="other_version/title">
+										<span class="largest-title font-bold" tal:content="other_version/title">Title</span>
+									</div>
+									
+									<div>
+										<span tal:content="string: Data de lancamento: ${other_version/release_date}" class="color-orange"> Data de lancamento</span>
+									</div>
+									
+									<div tal:condition="other_version/description">
+										<p tal:content="other_version/description"> Description of download</p>
+									</div>
+								</div>
+							</div>
+						</tal:cond>
+					</div>
+					<!-- end: CONTENT COLUMNS -->
+					
+				</div>
+			</metal:content-core>
+		</metal:main>
+
+	</body>
+</html>
