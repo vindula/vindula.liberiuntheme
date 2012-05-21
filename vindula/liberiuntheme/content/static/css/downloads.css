@@ -86,3 +86,7 @@
 .color-orange {
 	color: #F58220;
 }
+
+.none-decoration {
+	text-decoration: none !important;
+}

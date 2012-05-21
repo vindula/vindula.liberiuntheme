@@ -59,7 +59,7 @@
 									</div>
 									
 									<!-- start: BUTTON-->
-									<a tal:attributes="href selected_download/url_button">
+									<a class="none-decoration" tal:attributes="href selected_download/url_button">
 										<div class="button-download margin-tpbt-20px" id="button-download">
 											<span tal:content="structure selected_download/desc_button"> Description button </span>
 										</div>
