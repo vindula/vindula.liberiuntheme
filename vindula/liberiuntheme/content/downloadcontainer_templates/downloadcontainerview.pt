@@ -34,7 +34,7 @@
 									</tal:cond>
 								</div>
 							</div>
-							<div class="paginacao pag_homepage" tal:condition="python: len(context.banner) > 1">
+							<!--div class="paginacao pag_homepage" tal:condition="python: len(context.banner) > 1">
 								<a id="cycle-prev" class="pag_anterior" title="Anterior">
 									<img src="/++theme++vindula.liberiuntheme/images/buttons/anterior.png" />
 								</a>
@@ -42,7 +42,7 @@
 								<a id="cycle-next" class="pag_proximo" title="Pr&oacute;ximo">
 									<img src="/++theme++vindula.liberiuntheme/images/buttons/proximo.png" />
 								</a>
-							</div>
+							</div-->
 						</tal:def>
 					</div>
 					<!-- end: BANNER -->
