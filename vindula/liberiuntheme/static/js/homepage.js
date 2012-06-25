@@ -44,7 +44,7 @@ $j(document).ready(function(){
 	    }
 	}
 	
-	$j('#cont-boxes-1').height(max_height+10);
+	$j('#cont-boxes-1').height(max_height+20);
 	
 	$j(window).resize(function() {
         var height = $j('#info-destaque-1').height();
@@ -62,7 +62,7 @@ $j(document).ready(function(){
 	        }
 	    }
 	    
-	    $j('#cont-boxes-1').height(max_height+10);
+	    $j('#cont-boxes-1').height(max_height+20);
 	});
 	
 	/* END GALLERY CYCLE AND HEIGHT CONTENT BOXES */
