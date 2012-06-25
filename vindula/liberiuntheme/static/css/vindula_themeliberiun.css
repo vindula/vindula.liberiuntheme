@@ -168,6 +168,10 @@ div.cell { float: left; }
     line-height: 1.3em;
 }
 
+.paginacao p{
+  	margin-bottom: 0 !important
+}
+
 .pag_homepage{
 	margin-right: 10px;
 }
