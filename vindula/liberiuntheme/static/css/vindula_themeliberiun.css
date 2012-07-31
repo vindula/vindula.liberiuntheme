@@ -68,8 +68,24 @@
 }
 
 #portal-colophon-wrapper {
+	/*
 	margin: 0 auto;
     width: 992px;
+	*/
+	margin: 0 0 0 23.97%;
+    width: 36.75%;
+	float: left;
+}
+
+#facebook-box {
+	float: left;
+}
+
+#facebook-box > iframe {
+	border:none;
+	width:292px;
+	height:440px;
+	background:#FFF;
 }
 
 #portal-siteactions-ext {
@@ -81,13 +97,6 @@
 	margin: 0 auto;
     width: 992px;
 }
-
-#kss-spinner {
-	margin: 1.9em auto 1em;
-    width: 992px;
-}
-
-
 
 /*End Portal Footer*/
 

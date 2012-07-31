@@ -101,11 +101,10 @@
     display: block;
     height: auto;
     left: 0;
-    margin: 1.9em 1.2em 1em;
-    padding: 0 0 1.9em;
+    margin: 10px auto 30px;
     position: relative;
     top: 0;
-    width: auto;
+    width: 992px;
 }
 
 #cont_esquerda{
@@ -118,7 +117,6 @@
 
 #kss-spinner p{
    	color: #F58220;
-    float: left;
     font-size: 62.5%;
 }
 
