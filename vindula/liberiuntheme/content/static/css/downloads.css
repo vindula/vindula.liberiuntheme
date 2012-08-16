@@ -87,6 +87,10 @@
 	color: #F58220;
 }
 
+.link_hover:hover {
+	color: #F58220;
+}
+
 .none-decoration {
 	text-decoration: none !important;
 }

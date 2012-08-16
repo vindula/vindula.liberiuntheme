@@ -259,6 +259,7 @@ class DownloadContainerView(grok.View):
             D={}
             D['title'] = obj.Title()
             D['description'] = obj.Description()
+            D['absolute_url'] = obj.absolute_url()
             D['desc_button'] = obj.getDesc_button().replace('<p>','').replace('</p>','').replace('\n', '<br>')
             D['url_button'] = obj.getUrl_button()
             if D['url_button'][:4] != 'http':

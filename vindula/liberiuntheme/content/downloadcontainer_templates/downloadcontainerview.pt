@@ -100,7 +100,9 @@
 							<div class="margin-tpbt-20px" tal:repeat="other_version other_versions">
 								<div class="">
 									<div tal:condition="other_version/title">
-										<span class="largest-title font-bold" tal:content="other_version/title">Title</span>
+										<a tal:attributes="href other_version/absolute_url" class="none-decoration">
+											<span class="largest-title font-bold link_hover" tal:content="other_version/title">Title</span>
+										</a>
 									</div>
 									
 									<div>
