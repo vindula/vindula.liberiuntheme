@@ -8,12 +8,13 @@
   <object name="vindula.liberiuntheme.content.featuresection" meta_type="Dexterity FTI" />
   <object name="vindula.liberiuntheme.content.featuretopic" meta_type="Dexterity FTI" />
   <object name="vindula.liberiuntheme.content.featureprofile" meta_type="Dexterity FTI" />
-  <!--object name="vindula.liberiuntheme.content.downloadcontainer" meta_type="Dexterity FTI" />
-  <object name="vindula.liberiuntheme.content.download" meta_type="Dexterity FTI" /-->
-  
   <object name="DownloadContainer"	
 			meta_type="Factory-based Type Information with dynamic views"/>
   <object name="Download"	
 			meta_type="Factory-based Type Information with dynamic views"/> 
-  
+  <object name="PlanosPrecosContainer"	
+			meta_type="Factory-based Type Information with dynamic views"/>
+  <object name="PlanosPrecos"	
+			meta_type="Factory-based Type Information with dynamic views"/> 
+
 </object>

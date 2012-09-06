@@ -1,0 +1,87 @@
+.marginBt40 { margin-bottom: 40px; }
+.documentDescription {
+	color: #6E6E6E;
+	margin: 15px 0;
+	font-size: 20px;
+}
+#planos .alignCenter { text-align: center;}
+#planos .fontDiscreet { font-size: 85% !important; }
+#planos .marginTp10 { margin-top: 10px !important; }
+#planos .fontGray { color: #6E6E6E !important;}
+#planos .paddindTpBt15 { padding: 15px 0; }
+#planos .width100 { width: 100%; }
+#planos .titleBlack {
+	color: #000000;
+    font-size: 135%;
+	letter-spacing: 0.01em;
+}
+
+#planos .compareTable {
+	margin: 0 auto;
+	width: 90%;
+}
+
+#planos .barraSombra {
+	background: url("/++resource++vindula.liberiuntheme/images/bkgs/bk_barra_sombra.png") no-repeat scroll center 0 transparent;
+	height: 21px;
+	margin: 35px 0;
+}
+
+#planos .boxPlan {
+	width: 267px;
+	border: 1px solid #FFF;
+	outline: 1px solid #D2D4D3;
+	padding: 20px;
+	background: #F5F5F5;
+	float: left;
+	margin: 20px 12px;
+}
+#planos .boxPlan:first-child { margin-left: 0; }
+#planos .boxPlan:last-child { margin-right: 0; }
+
+#planos input[type="submit"],
+#planos .button {
+    background: none repeat scroll 0 0 #F9A61A;
+    border: 2px outset #F99430;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF !important;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 25px;
+    text-transform: uppercase;
+}
+
+#planos a.button { display: inline-block;}
+#planos .button:active:hover { border-style: inset; }
+
+#planos .precoPlano {
+	font-size: 35px !important;
+    font-weight: bold;
+    padding: 25px;
+	color: #969696 !important;
+}
+
+#planos .even { background-color: #EBEBEB;}
+#planos .lineWidth{ padding: 6px 0 6px 30px; }
+
+#planos .lineGroup {
+	border-top: 1px solid #C2C2C2;
+    padding-left: 4px;
+    text-align: left;
+}
+
+#planos .seta {
+	float: left;
+	border: 9px solid transparent;
+	margin: 1px 9px 0 0;
+	width: 0;
+	height: 0;
+}
+
+#planos .seta-left { border-left-color:#F98619; }
+#planos .seta-top { border-top-color:#F98619; }
+
+#planos .rowHead:last-child { border-bottom: 1px solid; }
+	
+

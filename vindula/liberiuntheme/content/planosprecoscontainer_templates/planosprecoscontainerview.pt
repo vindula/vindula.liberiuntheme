@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="vindula.liberiuntheme">
+	<body>
+	
+		<metal:js fill-slot="javascript_head_slot">
+			<script type="text/javascript" tal:attributes="src string:${view/static}/js/planosprecos.js"></script>
+		</metal:js>
+		
+		<metal:style fill-slot="style_slot">
+			<link type="text/css" rel="stylesheet" tal:attributes="href string:${view/static}/css/planosprecos.css"><link>
+		</metal:style>
+
+		<metal:main fill-slot="body">
+			<div metal:use-macro="context/kss_generic_macros/macros/generic_description_view">
+				Generic KSS Description. Is rendered with class="documentDescription".
+			</div>
+			
+			<div id="planos" class="contentPlans marginBt40"
+				 tal:define="planos view/getPlanos">
+				
+				<div class="boxesPlans" tal:condition="planos">
+					
+					<tal:rep tal:repeat="item planos">
+						<div class="boxPlan" tal:define="plano item/getObject">
+							<h2 class="titleBlack" tal:content="plano/Title">Title</h2>
+							<p class="descriptionPlan fontDiscreet marginTp10" tal:content="plano/Description">Description</p>
+							
+							<div class="alignCenter">							
+								<p class="precoPlano" tal:content="string: R$$${plano/getPreco}">Valor</p>
+								<a class="button" tal:define="url plano/getURLButton" tal:attributes="href python: url[:4] != 'http' and 'http://'+url or url">Inscrever-se</a>
+							</div>
+						</div>			
+					</tal:rep>
+				
+				</div>
+				
+				<div class="visualClear"></div>
+				<div class="barraSombra"></div>
+				
+				<div class="compareTable">
+					<div>
+						<h1 tal:content="context/getCompareTitle|nothing" class="titleBlack">Comparativo</h1>
+						<h2 tal:content="context/getCompareSubtitle|nothing" class="titleBlack fontGray">Planos x Funcionalidades</h2>
+					</div>
+					
+					<table class="width100" tal:condition="planos">
+						<thead>
+							<th width="40%;"></th>
+							<th class="paddindTpBt15" tal:repeat="plano planos" tal:content="plano/Title">Nome do Plano</th>
+						</thead>
+						
+						<tbody>
+							<tal:rep repeat="topic view/getTopics">
+								<tr tal:attributes="id topic" class="rowHead"><th class="lineGroup paddindTpBt15" tal:attributes="colspan python: len(planos) + 1">
+										<div class="seta seta-left"></div>
+										<span tal:content="topic">Nome do Topico</span>
+									</th>
+								</tr>
+								<tal:rep repeat="feature python:view.getFeatures(topic)">
+									<tr tal:define="evenrow repeat/feature/even" tal:attributes="class python: evenrow and 'even fontDiscreet fontGray' or 'odd fontDiscreet fontGray';
+																								 name topic;">
+										<td class="lineWidth" tal:content="string: - ${feature}">Nome Funcionalidade</td>
+										<td tal:repeat="plano planos" style="text-align:center;">
+											<tal:cond condition="python: feature in plano.getObject().getFeaturesPlan()">
+												<img src="/++resource++vindula.liberiuntheme/images/icons/accept.png" />
+											</tal:cond>
+										</td>
+									</tr>
+								</tal:rep>
+							</tal:rep>
+						</tbody>
+					</table>
+				</div>
+				
+			</div>
+			
+		</metal:main>
+
+	</body>
+</html>
